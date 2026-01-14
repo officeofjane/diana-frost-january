@@ -1,10 +1,17 @@
 <script>
+  import { getContext } from 'svelte';
+
   import Header from '$components/Header.svelte';
   import ScrollyWrapper from '$components/ScrollyWrapper.svelte';
   import Footer from '$components/Footer.svelte';
+
+  const copy = getContext("copy");
 </script>
 
-<Header />
+<Header 
+  hed={copy.hed}
+  subhed={copy.subhed}
+/>
 
 <section class="intro body-copy">
   <p>Once upon a time, in a world swept away by magic and melody, <em>Frozen</em> captured hearts everywhere with its timeless tale of love, courage and self-acceptance. With unforgettable songs, beloved characters and a warmth that resonated across generations, <em>Frozen</em> didn’t just tick the boxes of a Disney classic; it became a worldwide sensation.</p>

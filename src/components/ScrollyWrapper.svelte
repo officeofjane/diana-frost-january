@@ -1,5 +1,8 @@
 <script>
+  import { getContext } from 'svelte';
   import Scrolly from '$components/helpers/Scrolly.svelte';
+
+  const copy = getContext("copy");
 
   let scrollIndex = $state(0);
 </script>
@@ -24,11 +27,14 @@
     
   </div>
   <div class="steps-wrapper">
-    
     <Scrolly bind:value={scrollIndex}>
-      {#each ['Hello', 'Scrollytelling', 'World!'] as text, i}
+      {#each copy.scrolly as step, i}
         <div class="step" class:active={scrollIndex === i}>
-          <p class="copy">{text}</p>
+          <div class="copy">
+            {#each step.text as p}
+              <p>{@html p}</p>
+            {/each}
+          </div>
         </div>
       {/each}
     </Scrolly>
@@ -92,5 +98,17 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .copy {
+      width: 70%;
+      max-width: var(--copy-width);
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      background-color: white;
+      box-shadow: var(--shadow-elevation-medium);
+    }
   }
 </style>

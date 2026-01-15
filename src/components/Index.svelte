@@ -14,11 +14,11 @@
 />
 
 <section class="intro body-copy">
-  <p>Once upon a time, in a world swept away by magic and melody, <em>Frozen</em> captured hearts everywhere with its timeless tale of love, courage and self-acceptance. With unforgettable songs, beloved characters and a warmth that resonated across generations, <em>Frozen</em> didn’t just tick the boxes of a Disney classic; it became a worldwide sensation.</p>
-  <p>In Japan, <em>Frozen</em> was having a cultural moment of its own. Embraced by children and adults alike, the soaring ballad “Let It Go” (ありのままで, or <em>ari no mama de</em> in Japanese) echoed through classrooms, living rooms and concert halls. The franchise's remarkable success was no coincidence; it was the beautiful result of a powerful story brought to life with every facet of The Walt Disney Company — from studio production to merchandise and theme park experiences — working in harmony.</p>
-  <div class="small-wheel">
-    
-  </div>
+  {#each copy.intro as p}
+    <p>{@html p.text}</p>
+  {/each}
+  <div class="small-wheel"></div>
+  <p>{@html copy.transition}</p>
 </section>
 
 <section class="flywheel">
@@ -26,7 +26,9 @@
 </section>
 
 <section class="outro body-copy">
-  <p>Today, <em>Frozen</em> continues to inspire fans across generations. As the countdown to <em>Frozen 3</em> begins, the enchanting world of Arendelle is poised to reveal even more frosty adventures and heartwarming moments that will captivate our hearts and spark imagination once again.</p>
+  {#each copy.outro as p}
+    <p>{@html p.text}</p>
+  {/each}
 </section>
 
 <Footer />

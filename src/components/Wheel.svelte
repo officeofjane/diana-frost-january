@@ -1,16 +1,21 @@
 <script>
   import { arc, pie } from "d3-shape";
   import { data } from "$data/data.js";
+  import colours from "$data/colours.json";
 
   let { width, height } = $props();
 
+  const ARC_WIDTH = 24;
+
   const outerRadius = $derived(Math.min(width, height) * 0.5 - 60);
-  const innerRadius = $derived(outerRadius - 24);
+  const innerRadius = $derived(outerRadius - ARC_WIDTH);
 
   const wheelArc = $derived.by(() => {
     const d = arc()
       .innerRadius(innerRadius)
-      .outerRadius(outerRadius);
+      .outerRadius(outerRadius)
+      .padAngle(0.01)
+      .cornerRadius(ARC_WIDTH);
     return d;
   });
 
@@ -18,6 +23,8 @@
     .sort(null)
     .value((d) => d.count);
   const wheelData = wheelPie(data);
+
+  console.log(wheelData);
 
 </script>
 
@@ -27,7 +34,7 @@
     transform="translate({width/2}, {height/2})"
   >
     {#each wheelData as slice}
-      <path d={wheelArc(slice)} stroke="white" fill="blue"/>
+      <path d={wheelArc(slice)} stroke="white" fill={colours[slice.data.category]}/>
     {/each}
   </g>
 </svg>

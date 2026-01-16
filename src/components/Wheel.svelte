@@ -28,6 +28,14 @@
     return d;
   });
 
+  const highlightArc = $derived.by(() => {
+    const d = arc()
+      .innerRadius(innerRadius)
+      .outerRadius(width/2)
+      .padAngle(0.01)
+    return d;
+  });
+
   const wheelPie = pie()
     .sort(null)
     .value((d) => d.count);
@@ -42,9 +50,9 @@
       <stop offset="10%" stop-color="gold" />
       <stop offset="95%" stop-color="red" />
     </radialGradient>
-    <mask id="mask">
-      <rect x="0" y="0" width={width} height={height} fill="url(#gradient)" />
-    </mask>
+    <clipPath id="highlight-clip">
+      <!-- highlight arcs defined here within each loop -->
+    </clipPath>
   </defs>
 
   <g 
@@ -52,9 +60,13 @@
     transform="translate({width/2}, {height/2})"
   >
     {#each wheelData as slice}
-      <path 
+      <path class="highlight-arc" 
+        d={highlightArc(slice)} 
+        fill={colours[slice.data.category]}
+        fill-opacity="0.3"
+      />
+      <path class="arc"
         d={wheelArc(slice)} 
-        stroke="white" 
         fill={colours[slice.data.category]}
       />
     {/each}

@@ -47,24 +47,38 @@
 <svg viewBox="0, 0, {width}, {height}">
   <defs>
     <radialGradient id="gradient">
-      <stop offset="10%" stop-color="gold" />
-      <stop offset="95%" stop-color="red" />
+      <stop offset="0" stop-color="white" />
+      <stop offset="1" stop-color="black" />
     </radialGradient>
-    <clipPath id="highlight-clip">
-      <!-- highlight arcs defined here within each loop -->
-    </clipPath>
+    <mask id="mask">
+      <rect x=0 y=0 width={width} height={height} fill="url(#gradient)"/>
+    </mask>
+    {#each wheelData as slice}
+      <clipPath id="highlight-clip-{slice.data.category}">
+        <path
+          d={highlightArc(slice)}
+          transform="translate({width/2}, {height/2})"
+        />
+      </clipPath>
+    {/each}
   </defs>
 
+  <g class="highlights">
+    {#each wheelData as slice}
+      <rect class="highlight-{slice.data.category}"
+        x=0 y=0 width={width} height={height} 
+        fill={colours[slice.data.category]} 
+        fill-opacity="0.3"
+        mask="url(#mask)" 
+        clip-path="url(#highlight-clip-{slice.data.category})"
+      />
+    {/each}
+  </g>
   <g 
     class="pie"
     transform="translate({width/2}, {height/2})"
   >
     {#each wheelData as slice}
-      <path class="highlight-arc" 
-        d={highlightArc(slice)} 
-        fill={colours[slice.data.category]}
-        fill-opacity="0.3"
-      />
       <path class="arc"
         d={wheelArc(slice)} 
         fill={colours[slice.data.category]}

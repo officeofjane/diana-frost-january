@@ -52,7 +52,7 @@
   .wheel-wrapper {
     max-width: var(--copy-width);
     aspect-ratio: 1;
-    background-color: papayawhip;
+    /* background-color: whitesmoke; */
     margin: 0 auto;
   }
 

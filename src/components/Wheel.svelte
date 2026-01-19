@@ -11,10 +11,11 @@
   const ARC_WIDTH = 21;
   const NUM_NODES = 50;
   const NODE_RADIUS = 6;
+  const RADIANS = 180/Math.PI;
 
   const nodeScale = scaleLinear()
     .domain([0, NUM_NODES])
-    .range([0, 360]);
+    .range([-90, 270]);
 
   const outerRadius = $derived(Math.min(width, height) * 0.5 - MARGIN);
   const innerRadius = $derived(outerRadius - ARC_WIDTH);
@@ -86,6 +87,23 @@
     {/each}
   </g>
 
+  <g class="labels"
+    transform="translate({width/2}, {height/2})"
+  >
+    {#each wheelData as slice, i}
+      {#each slice.data.labels as label, k}
+        <text
+          x="8"
+          dy="0.35em"
+          fill={colours[slice.data.category]}
+          transform="rotate({slice.startAngle * RADIANS + 360/NUM_NODES/2 - 90 + (360/NUM_NODES * k)}) translate({outerRadius}, 0)" 
+        >
+          {label}
+        </text>
+      {/each}
+    {/each}
+  </g>
+
   <g class="nodes"
     transform="translate({width/2}, {height/2})"
   >
@@ -94,7 +112,7 @@
       cx="0" 
       cy={(outerRadius-ARC_WIDTH/2)}
       r={NODE_RADIUS} 
-      transform="rotate({nodeScale(node) + 360/NUM_NODES/2})" 
+      transform="rotate({nodeScale(node)})" 
     />
     {/each}
   </g>

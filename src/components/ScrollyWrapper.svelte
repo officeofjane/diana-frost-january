@@ -6,16 +6,26 @@
   const copy = getContext("copy");
 
   let scrollIndex = $state(0);
+
+  let wheelWrapperWidth = $state(0);
+  let wheelWrapperHeight = $state(0);
 </script>
 
 <div class="container">
   <div class="sticky">
-    <div class="wheel-wrapper">
+    <div class="left">
+      <div 
+      class="wheel-wrapper"
+        bind:offsetWidth={wheelWrapperWidth}
+        bind:offsetHeight={wheelWrapperHeight}
+      >
+        <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
+      </div>
       <p>flywheel here</p>
       <p>ScrollIndex: {scrollIndex}</p>
     </div>
     <!-- turn bg into component? import all the scrolly steps here? -->
-    <div class="bg-wrapper">
+    <div class="right">
       <div class="bg red" class:active={scrollIndex === 0}>
         <p>Background: {scrollIndex} I am red if active</p>
         <p>Does entry animation still work if active class is toggling opacity? (it's not on load)</p>
@@ -47,7 +57,7 @@
     max-width: 1440px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(360px, 30%) 1fr;
+    grid-template-columns: minmax(350px, 28%) 1fr;
   }
 
   .sticky {
@@ -60,11 +70,22 @@
     grid-template-columns: subgrid;
   }
 
-  .wheel-wrapper {
-    background-color: aliceblue;
+  .left {
+    /* background-color: aliceblue; */
+    position: relative;
+    overflow: hidden;
   }
 
-  .bg-wrapper {
+  .wheel-wrapper {
+    position: absolute;
+    width: 200%;
+    aspect-ratio: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100%;
+  }
+
+  .right {
     background-color: papayawhip;
     position: relative;
   }

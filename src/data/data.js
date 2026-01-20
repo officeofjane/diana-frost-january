@@ -1,60 +1,60 @@
 const data = [
   { category: "studio", 
-    count: 7,
+    name: "Studio",
     labels: ["Disney Live Action", "Disney Animation", "Pixar", "Marvel Studios", "Lucasfilm", "20th Century", "Searchlight Pictures"]
   },
   { category: "experiences", 
-    count: 5,
+    name: "Experiences",
     labels: ["Tokyo Disneyland", "Tokyo Disneysea", "Hotels", "Disney Resort Line", "Disney Cruise Line"]
   },
   { category: "content-sales", 
-    count: 5,
+    name: "Content Sales",
     labels: ["DVD/Blu-ray", "SVOD", "TVOD", "EHV", "Linear"]
   },
   { 
     category: "music", 
-    count: 2,
+    name: "Music",
     labels: ["Album Releases", "Playlists"]
   },
   { 
     category: "games", 
-    count: 3,
+    name: "Games",
     labels: ["Mobile Devices", "Console Games", "Computer Games"]
   },
   { 
     category: "channel", 
-    count: 4,
+    name: "Channel",
     labels: ["Disney Channel", "Disney Junior", "D Life", "National Geographic"]
   },
   { 
     category: "fan", 
-    count: 2,
+    name: "Fan",
     labels: ["Fan Fest", "Conventions"]
   },
   { 
     category: "publishing", 
-    count: 3,
+    name: "Publishing",
     labels: ["Digital Asset Licensing", "Learning Books", "Books and Magazines"]
   },
   { 
-    category: "entertainment", 
-    count: 5,
+    category: "entertainment",
+    name: "Live Entertainment",
     labels: ["Disney Music & Fireworks", "Disney On Ice", "Shiki Musicals", "Concerts", "Immersive Exhibitions"]
   },
   { 
     category: "stores", 
-    count: 2,
+    name: "Stores",
     labels: ["Shop Disney (Online)", "Disney Store Japan"]
   },
   { 
     category: "products", 
-    count: 6,
+    name: "Consumer Products",
     labels: ["Beauty", "Food/Pet", "Fashion", "Home", "Stationery", "Toys"]
   },
   { 
     category: "disney-plus", 
-    count: 6,
-    labels: ["Disney", "Pixar", "Marvel", "Star Wars", "National Geographic", "Star (Original Content)"]
+    name: "Disney+",
+    labels: ["Disney", "Pixar", "Marvel", "Star Wars", "National Geographic", "Star"]
   }
 ];
 

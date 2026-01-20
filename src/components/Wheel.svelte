@@ -7,11 +7,13 @@
 
   let { width, height } = $props();
 
-  const MARGIN = 120;
+  const MARGIN = 160;
   const ARC_WIDTH = 21;
-  const NUM_NODES = 50;
-  const NODE_RADIUS = 6;
-  const RADIANS = 180/Math.PI;
+  const NODE_RADIUS = 5.5;
+  const NUM_NODES = data.map(d => d.labels).flat().length;
+  const labelStartAngle = 360/NUM_NODES/2 - 90;
+
+  const toDegrees = (radians) => radians * 180/Math.PI;
 
   const nodeScale = scaleLinear()
     .domain([0, NUM_NODES])
@@ -24,7 +26,7 @@
     const d = arc()
       .innerRadius(innerRadius)
       .outerRadius(outerRadius)
-      .padAngle(0.01)
+      .padAngle(0.015)
       .cornerRadius(ARC_WIDTH);
     return d;
   });
@@ -39,7 +41,7 @@
 
   const wheelPie = pie()
     .sort(null)
-    .value((d) => d.count);
+    .value((d) => d.labels.length);
   const wheelData = wheelPie(data);
 
   console.log(wheelData);
@@ -66,7 +68,7 @@
 
   <g class="highlights">
     {#each wheelData as slice}
-      <rect class="highlight-{slice.data.category}"
+      <rect class="highlight {slice.data.category}"
         x=0 y=0 width={width} height={height} 
         fill={colours[slice.data.category]} 
         fill-opacity="0.3"
@@ -80,10 +82,20 @@
     transform="translate({width/2}, {height/2})"
   >
     {#each wheelData as slice}
-      <path class="arc"
+    {@const centroid = slice.startAngle + (slice.endAngle - slice.startAngle)/2}
+      <path class="arc {slice.data.category}"
         d={wheelArc(slice)} 
         fill={colours[slice.data.category]}
       />
+      <text class="category {slice.data.category}"
+        x="-8"
+        dy="-0.5em"
+        fill={colours[slice.data.category]}
+        text-anchor="end"
+        transform="rotate({toDegrees(centroid) + labelStartAngle}) translate({innerRadius}, 0)" 
+      >
+        {slice.data.name}
+      </text>
     {/each}
   </g>
 
@@ -92,11 +104,11 @@
   >
     {#each wheelData as slice, i}
       {#each slice.data.labels as label, k}
-        <text
+        <text class="label-{slice.data.category}"
           x="8"
           dy="0.35em"
           fill={colours[slice.data.category]}
-          transform="rotate({slice.startAngle * RADIANS + 360/NUM_NODES/2 - 90 + (360/NUM_NODES * k)}) translate({outerRadius}, 0)" 
+          transform="rotate({toDegrees(slice.startAngle) + (360/NUM_NODES * k) + labelStartAngle}) translate({outerRadius}, 0)" 
         >
           {label}
         </text>
@@ -127,4 +139,14 @@
   .node {
     fill: white;
   }
+
+  text {
+    font-size: 1rem;
+    font-weight: 500;
+
+    &.category {
+      font-weight: 700;
+    }
+  }
+
 </style>

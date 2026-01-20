@@ -50,7 +50,7 @@
 
 <style>
   .wheel-wrapper {
-    max-width: var(--copy-width);
+    max-width: 800px;
     aspect-ratio: 1;
     /* background-color: whitesmoke; */
     margin: 0 auto;

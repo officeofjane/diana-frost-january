@@ -1,6 +1,7 @@
 <script>
   import { getContext } from 'svelte';
   import Scrolly from '$components/helpers/Scrolly.svelte';
+  import Wheel from '$components/Wheel.svelte';
 
   const copy = getContext("copy");
 
@@ -46,7 +47,7 @@
     max-width: 1440px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: minmax(360px, 30%) 1fr;
   }
 
   .sticky {

@@ -19,12 +19,14 @@
 />
 
 <section class="wheel-test">
-  <div 
-    class="wheel-wrapper"
-    bind:offsetWidth={wheelWrapperWidth}
-    bind:offsetHeight={wheelWrapperHeight}
-  >
-    <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
+  <div class="sticky">
+    <div 
+      class="wheel-wrapper"
+      bind:offsetWidth={wheelWrapperWidth}
+      bind:offsetHeight={wheelWrapperHeight}
+    >
+      <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
+    </div>
   </div>
 </section>
 
@@ -49,11 +51,22 @@
 <Footer />
 
 <style>
+  .sticky {
+    position: relative;
+    max-width: 400px;
+    height: 100vh;
+    background-color: whitesmoke;
+    margin: 0 auto;   
+    overflow: hidden;
+  }
+
   .wheel-wrapper {
-    max-width: 800px;
+    position: absolute;
+    width: 200%;
     aspect-ratio: 1;
-    /* background-color: whitesmoke; */
-    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100%;
   }
 
   .body-copy {

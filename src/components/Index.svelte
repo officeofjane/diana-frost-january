@@ -2,6 +2,7 @@
   import { getContext } from 'svelte';
 
   import Header from '$components/Header.svelte';
+  import Wheel from '$components/Wheel.svelte';
   import ScrollyWrapper from '$components/ScrollyWrapper.svelte';
   import Footer from '$components/Footer.svelte';
 

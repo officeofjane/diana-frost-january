@@ -1,5 +1,6 @@
 <script>
   import { getContext } from 'svelte';
+  import narrative from '$data/narrative.js';
   import Scrolly from '$components/helpers/Scrolly.svelte';
   import Wheel from '$components/Wheel.svelte';
 
@@ -9,20 +10,33 @@
 
   let wheelWrapperWidth = $state(0);
   let wheelWrapperHeight = $state(0);
+
+  function getRotation(index) {
+    if (index) {
+      const obj = narrative.find(d => d.step === index).rotation;
+      return obj;
+    } else {
+      return 0;
+    }
+  }
 </script>
 
 <div class="container">
   <div class="sticky">
     <div class="left">
-      <div 
-      class="wheel-wrapper"
+      <div class="wheel-wrapper"
         bind:offsetWidth={wheelWrapperWidth}
         bind:offsetHeight={wheelWrapperHeight}
       >
-        <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
+        <div class="rotate"
+          style="--turn: {getRotation(scrollIndex)/50}turn"
+        >
+          <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
+        </div>
       </div>
       <p>flywheel here</p>
       <p>ScrollIndex: {scrollIndex}</p>
+      <p>Rotation: {getRotation(scrollIndex)}</p>
     </div>
     <!-- turn bg into component? import all the scrolly steps here? -->
     <div class="right">
@@ -80,9 +94,16 @@
     position: absolute;
     width: 200%;
     aspect-ratio: 1;
-    top: 50%;
-    transform: translateY(-50%);
     left: -100%;
+    top: 50%;
+    /* move up by half its own size to center align within div */
+    transform: translateY(-50%);
+  }
+
+  .rotate {
+    --turn: 0turn;
+    transform: rotate(var(--turn));
+    transition: transform 0.7s ease-in;
   }
 
   .right {

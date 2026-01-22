@@ -58,4 +58,6 @@ const data = [
   }
 ];
 
-export default data;
+const NUM_NODES = data.map(d => d.labels).flat().length;
+
+export { data, NUM_NODES };

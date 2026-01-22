@@ -2,7 +2,7 @@
   import { arc, pie } from "d3-shape";
   import { range } from "d3-array";
   import { scaleLinear } from "d3-scale";
-  import { data } from "$data/data.js";
+  import data from "$data/data.js";
   import colours from "$data/colours.json";
 
   let { width, height } = $props();

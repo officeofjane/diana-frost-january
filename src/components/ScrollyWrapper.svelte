@@ -15,9 +15,8 @@
     if (index) {
       const obj = narrative.find(d => d.step === index).rotation;
       return obj;
-    } else {
-      return 0;
-    }
+    } 
+    return 0;
   }
 </script>
 
@@ -34,9 +33,7 @@
           <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
         </div>
       </div>
-      <p>flywheel here</p>
       <p>ScrollIndex: {scrollIndex}</p>
-      <p>Rotation: {getRotation(scrollIndex)}</p>
     </div>
     <!-- turn bg into component? import all the scrolly steps here? -->
     <div class="right">

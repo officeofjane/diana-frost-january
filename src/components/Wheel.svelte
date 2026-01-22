@@ -2,15 +2,14 @@
   import { arc, pie } from "d3-shape";
   import { range } from "d3-array";
   import { scaleLinear } from "d3-scale";
-  import data from "$data/data.js";
+  import { data, NUM_NODES } from "$data/data.js";
   import colours from "$data/colours.json";
 
-  let { width, height } = $props();
+  let { width, height, highlight = "" } = $props();
 
   const MARGIN = 160;
   const ARC_WIDTH = 21;
   const NODE_RADIUS = 5.5;
-  const NUM_NODES = data.map(d => d.labels).flat().length;
   const labelStartAngle = 360/NUM_NODES/2 - 90;
 
   const toDegrees = (radians) => radians * 180/Math.PI;
@@ -68,12 +67,14 @@
 
   <g class="highlights">
     {#each wheelData as slice}
-      <rect class="highlight {slice.data.category}"
+    {@const category = slice.data.category}
+      <rect class="highlight {category}"
         x=0 y=0 width={width} height={height} 
-        fill={colours[slice.data.category]} 
+        fill={colours[category]} 
         fill-opacity="0.3"
+        opacity={category === highlight ? 1 : 0}
         mask="url(#mask)" 
-        clip-path="url(#highlight-clip-{slice.data.category})"
+        clip-path="url(#highlight-clip-{category})"
       />
     {/each}
   </g>
@@ -83,14 +84,16 @@
   >
     {#each wheelData as slice}
     {@const centroid = slice.startAngle + (slice.endAngle - slice.startAngle)/2}
-      <path class="arc {slice.data.category}"
+    {@const category = slice.data.category}
+      <path class="arc {category}"
         d={wheelArc(slice)} 
-        fill={colours[slice.data.category]}
+        fill={colours[category]}
       />
-      <text class="category {slice.data.category}"
+      <text class="category {category}"
         x="-8"
         dy="-0.5em"
-        fill={colours[slice.data.category]}
+        fill={colours[category]}
+        opacity={category === highlight ? 1 : 0}
         text-anchor="end"
         transform="rotate({toDegrees(centroid) + labelStartAngle}) translate({innerRadius}, 0)" 
       >
@@ -103,11 +106,13 @@
     transform="translate({width/2}, {height/2})"
   >
     {#each wheelData as slice, i}
+    {@const category = slice.data.category}
       {#each slice.data.labels as label, k}
-        <text class="label-{slice.data.category}"
+        <text class="label {category}"
           x="8"
           dy="0.35em"
-          fill={colours[slice.data.category]}
+          style="--label-colour: {category === highlight  || highlight === "all" ? colours[category] : 'inherit'}"
+          fill="var(--label-colour)"
           transform="rotate({toDegrees(slice.startAngle) + (360/NUM_NODES * k) + labelStartAngle}) translate({outerRadius}, 0)" 
         >
           {label}
@@ -134,6 +139,9 @@
   svg {
     width: 100%;
     height: 100%;
+    
+    --gray: rgb(220, 220, 220);
+    --label-colour: var(--gray);
   }
   
   .node {
@@ -146,6 +154,10 @@
 
     &.category {
       font-weight: 700;
+    }
+
+    &.label {
+      fill: var(--label-colour);
     }
   }
 

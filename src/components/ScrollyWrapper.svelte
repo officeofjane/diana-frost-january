@@ -1,6 +1,7 @@
 <script>
   import { getContext } from 'svelte';
   import narrative from '$data/narrative.js';
+  import { NUM_NODES } from '$data/data.js';
   import Scrolly from '$components/helpers/Scrolly.svelte';
   import Wheel from '$components/Wheel.svelte';
 
@@ -11,12 +12,12 @@
   let wheelWrapperWidth = $state(0);
   let wheelWrapperHeight = $state(0);
 
-  function getRotation(index) {
+  function slice(index) {
     if (index) {
-      const obj = narrative.find(d => d.step === index).rotation;
+      const obj = narrative.find(d => d.step === index);
       return obj;
     } 
-    return 0;
+    return narrative[0];
   }
 </script>
 
@@ -28,12 +29,13 @@
         bind:offsetHeight={wheelWrapperHeight}
       >
         <div class="rotate"
-          style="--turn: {getRotation(scrollIndex)/50}turn"
+          style="--turn: {slice(scrollIndex).rotation/NUM_NODES}turn"
         >
-          <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight}/>
+          <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight} highlight={slice(scrollIndex).highlight}/>
         </div>
       </div>
       <p>ScrollIndex: {scrollIndex}</p>
+      <p>Highlight: {slice(scrollIndex).highlight}</p>
     </div>
     <!-- turn bg into component? import all the scrolly steps here? -->
     <div class="right">

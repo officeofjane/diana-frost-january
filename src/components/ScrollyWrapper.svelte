@@ -5,6 +5,7 @@
   import Scrolly from '$components/helpers/Scrolly.svelte';
   import Wheel from '$components/Wheel.svelte';
   import Background from '$components/Background.svelte';
+  import Step from '$components/Step.svelte';
 
   const copy = getContext("copy");
 
@@ -45,6 +46,7 @@
       <!-- each loop class active if scrollIndex === i -->
       <div class="bg" class:active={scrollIndex === 0}>
         <Background bgColours={slice(scrollIndex).gradientColours}/>
+        <Step />
       </div>
       <div class="bg" class:active={scrollIndex === 1}>
         <Background bgColours={slice(scrollIndex).gradientColours}/>
@@ -125,10 +127,6 @@
 
   .bg.active {
     opacity: 1;
-  }
-
-  .bg.blue {
-    background-color: blue;
   }
 
   .steps-wrapper {

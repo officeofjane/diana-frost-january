@@ -1,4 +1,8 @@
-<div class="wrapper">
+<script>
+  let { isActive = false } = $props();
+</script>
+
+<div class={["wrapper", {active: isActive}]}>
   <div class="image a">
   </div>
   <div class="image b">
@@ -23,29 +27,37 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 2fr 1fr 1fr;
     grid-gap: 10px;
+
+  }
+
+  .image {
+    background-color: red;
   }
 
   .image.a {
     grid-column: 2 / span 4;
     grid-row: 1;
-    background-color: red;
+  }
+
+  .active .image.a {
+    background-color: blue;
+    animation-duration: 0.5s;
+    animation-name: animate-pop;
+    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
   }
 
   .image.b {
     grid-column: 4 / span 2;
     grid-row: 2 / span 2;
-    background-color: red;
   }
 
   .image.c {
     grid-column: 8 / span 2;
     grid-row: 2 / span 1;
-    background-color: red;
   }
 
   .image.d {
     grid-column: 7 / span 2;
     grid-row: 3 / span 1;
-    background-color: red;
   }
 </style>

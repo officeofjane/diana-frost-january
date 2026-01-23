@@ -46,7 +46,7 @@
       <!-- each loop class active if scrollIndex === i -->
       <div class="bg" class:active={scrollIndex === 0}>
         <Background bgColours={slice(scrollIndex).gradientColours}/>
-        <Step />
+        <Step isActive={scrollIndex === 0}/>
       </div>
       <div class="bg" class:active={scrollIndex === 1}>
         <Background bgColours={slice(scrollIndex).gradientColours}/>

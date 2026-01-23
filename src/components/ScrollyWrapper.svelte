@@ -4,6 +4,7 @@
   import { NUM_NODES } from '$data/data.js';
   import Scrolly from '$components/helpers/Scrolly.svelte';
   import Wheel from '$components/Wheel.svelte';
+  import Background from '$components/Background.svelte';
 
   const copy = getContext("copy");
 
@@ -37,15 +38,19 @@
       <p>ScrollIndex: {scrollIndex}</p>
       <p>Highlight: {slice(scrollIndex).highlight}</p>
     </div>
-    <!-- turn bg into component? import all the scrolly steps here? -->
+    <!-- single noise gradient bg component with colour props? -->
+    <!-- turn each layout step into a separate component? import all the scrolly steps here? -->
+    <!-- pass down isActive state prop into step layout component? then apply class inside component to trigger animation -->
     <div class="right">
-      <div class="bg red" class:active={scrollIndex === 0}>
-        <p>Background: {scrollIndex} I am red if active</p>
+      <!-- each loop class active if scrollIndex === i -->
+      <div class="bg" class:active={scrollIndex === 0}>
+        <Background bgColours={slice(scrollIndex).gradientColours}/>
+      </div>
+      <div class="bg" class:active={scrollIndex === 1}>
+        <Background bgColours={slice(scrollIndex).gradientColours}/>
+        <p>Background: {scrollIndex} I am blue if active</p>
         <p>Does entry animation still work if active class is toggling opacity? (it's not on load)</p>
         <p>Should work, tie the animation (opacity and transform) to trigger when the active class is applied to element. But how is the CSS scoped if it's a component?</p>
-      </div>
-      <div class="bg blue" class:active={scrollIndex === 1}>
-        <p>Background: {scrollIndex} I am blue if active</p>
       </div>
     </div>
     
@@ -106,7 +111,6 @@
   }
 
   .right {
-    background-color: papayawhip;
     position: relative;
   }
 
@@ -121,10 +125,6 @@
 
   .bg.active {
     opacity: 1;
-  }
-
-  .bg.red {
-    background-color: red;
   }
 
   .bg.blue {

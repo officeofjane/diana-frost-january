@@ -1,8 +1,10 @@
 <script>
+  import "$styles/layout-steps.css";
+  
   let { isActive = false } = $props();
 </script>
 
-<div class={["wrapper", {active: isActive}]}>
+<div class={["layout-wrapper", {active: isActive}]}>
   <div class="image a">
   </div>
   <div class="image b">
@@ -14,20 +16,9 @@
 </div>
 
 <style>
-  .wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-
+  .layout-wrapper {
     padding: 10px 0 10px 0;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 2fr 1fr 1fr;
-    grid-gap: 10px;
-
   }
 
   .image {

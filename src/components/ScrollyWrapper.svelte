@@ -43,17 +43,13 @@
     <!-- turn each layout step into a separate component? import all the scrolly steps here? -->
     <!-- pass down isActive state prop into step layout component? then apply class inside component to trigger animation -->
     <div class="right">
-      <!-- each loop class active if scrollIndex === i -->
-      <div class="bg" class:active={scrollIndex === 0}>
-        <Background bgColours={slice(scrollIndex).gradientColours}/>
-        <Step isActive={scrollIndex === 0}/>
-      </div>
-      <div class="bg" class:active={scrollIndex === 1}>
-        <Background bgColours={slice(scrollIndex).gradientColours}/>
-        <p>Background: {scrollIndex} I am blue if active</p>
-        <p>Does entry animation still work if active class is toggling opacity? (it's not on load)</p>
-        <p>Should work, tie the animation (opacity and transform) to trigger when the active class is applied to element. But how is the CSS scoped if it's a component?</p>
-      </div>
+      {#each narrative as step, i}
+        <div class="bg" class:active={scrollIndex === i}>
+          <Background bgColours={slice(scrollIndex).gradientColours}/>
+          <!-- need to create separate components for each step? -->
+          <Step isActive={scrollIndex === i}/>
+        </div>
+      {/each}
     </div>
     
   </div>

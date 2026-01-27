@@ -1,0 +1,21 @@
+.layout-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  padding: 10px 0 10px 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+}
+
+.layout-wrapper .image img {
+  width: 100%;
+  object-fit: cover;
+
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);	
+}

@@ -25,7 +25,7 @@ Mobile first, default phones from 0px to 549px
   --colour-blue-light: rgb(0,100,200);
   --colour-blue-dark: rgb(0,80,160);
 
-  --shadow-colour: 15deg 41% 48%;
+  --shadow-colour: 222deg 40% 25%;
   --shadow-elevation-low:
     0.3px 0.5px 0.5px hsl(var(--shadow-colour) / 0.73),
     0.4px 0.7px 0.7px -2.3px hsl(var(--shadow-colour) / 0.51),
@@ -66,4 +66,16 @@ a:hover {
 
 a:visited {
 	color: var(--colour-blue-dark);
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
 }

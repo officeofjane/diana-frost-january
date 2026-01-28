@@ -41,6 +41,18 @@
     margin-bottom: 3rem;
   }
 
+  .intro p:first-of-type::first-letter {
+    color: white;
+    background-color: black;
+    border-radius: 2px;
+    box-shadow: 3px 3px 0 red;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 6px 3px;
+    margin-right: 6px;
+    float: left;
+  }
+
   .small-wheel {
     width: 300px;
     height: 300px;

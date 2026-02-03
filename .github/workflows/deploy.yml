@@ -8,6 +8,8 @@ on:
 jobs:
   build_site:
     runs-on: ubuntu-latest
+    env:
+      STATICRYPT_PASSWORD: ${{ secrets.PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,10 +31,8 @@ jobs:
 
       - name: encrypt
         shell: bash
-        env:
-          STATICRYPT_PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          cd build && npx staticrypt --short index.html -p "$STATICRYPT_PASSWORD" -d . && echo $STATICRYPT_PASSWORD
+          cd build && npx staticrypt --short index.html -p "${{ github.STATICRYPT_PASSWORD }}" -d . && echo $STATICRYPT_PASSWORD
 
 
       - name: Upload Artifacts

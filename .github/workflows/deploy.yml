@@ -27,6 +27,12 @@ jobs:
         run: |
           npm run build
 
+      - name: encrypt
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          cd build && npx staticrypt --short index.html -p ${{ secrets.PASSWORD }} -d .
+
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:

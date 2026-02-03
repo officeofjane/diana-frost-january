@@ -29,9 +29,9 @@ jobs:
 
       - name: encrypt
         env:
-          PASSWORD: ${{ secrets.PASSWORD }}
+          STATICRYPT_PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          cd build && npx staticrypt --short index.html -p ${{ secrets.PASSWORD }} -d .
+          cd build && npx staticrypt --short index.html -d .
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3

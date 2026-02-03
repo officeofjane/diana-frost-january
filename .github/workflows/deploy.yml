@@ -32,7 +32,7 @@ jobs:
       - name: encrypt
         shell: bash
         run: |
-          cd build && npx staticrypt --short index.html -p "${{ github.STATICRYPT_PASSWORD }}" -d . && echo $STATICRYPT_PASSWORD
+          cd build && npx staticrypt --short index.html -p "${{ github.env.STATICRYPT_PASSWORD }}" -d . && echo $STATICRYPT_PASSWORD
 
 
       - name: Upload Artifacts

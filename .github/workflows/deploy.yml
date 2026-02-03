@@ -29,6 +29,24 @@ jobs:
         run: |
           npm run build
 
+      - name: Debug variables
+        run: |
+          echo "=== GitHub Context Variables ==="
+          echo "Actor: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Env: STATICRYPT_PASSWORD : ${{ github.env.STATICRYPT_PASSWORD }}"
+          echo "Secrets: PASSWORD : ${{ secrets.PASSWORD }}"
+
+          echo "=== Shell Environment Variables ==="
+          env | grep GITHUB || true
+          env | grep CI || true
+
+          echo "=== Check if specific vars are empty ==="
+          [[ -z "$GITHUB_SHA" ]] && echo "GITHUB_SHA is empty" || echo "GITHUB_SHA is set"
+
       - name: encrypt
         shell: bash
         run: |

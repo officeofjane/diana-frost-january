@@ -35,7 +35,7 @@ jobs:
         env:
           STATICRYPT_PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          cd build && npx staticrypt --short index.html -d .
+          cd build && npx staticrypt --short index.html -p guidance -d .
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3

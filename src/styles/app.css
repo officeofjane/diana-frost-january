@@ -19,7 +19,7 @@ Mobile first, default phones from 0px to 549px
 
 @font-face {
   font-family: "InspireTWDC";
-  src: url("./assets/InspireTWDC.woff2") format("woff2");
+  src: url("/fonts/InspireTWDC.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-stretch: normal;

@@ -8,7 +8,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''"
+		"prepare": "svelte-kit sync || echo ''",
+		"protect": "cd .svelte-kit/output/prerendered/pages && npx staticrypt --short index.html -p password -d ."
 	},
 	"devDependencies": {
 		"@rollup/plugin-dsv": "^3.0.5",

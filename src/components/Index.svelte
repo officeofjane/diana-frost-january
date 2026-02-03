@@ -39,6 +39,7 @@
     max-width: var(--copy-width);
     margin: 0 auto;
     margin-bottom: 3rem;
+    font-size: 1.125rem;
   }
 
   .intro p:first-of-type::first-letter {
@@ -46,9 +47,9 @@
     background-color: black;
     border-radius: 2px;
     box-shadow: 3px 3px 0 red;
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 700;
-    padding: 6px 3px;
+    padding: 8px 8px;
     margin-right: 6px;
     float: left;
   }

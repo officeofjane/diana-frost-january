@@ -27,8 +27,35 @@
       .map((_event, index) => createSnowflake(canvas, true, index));
 
     const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      snowflakes.forEach((flake) => {
+        flake.y += flake.speed;
+        flake.x += Math.sin(flake.y / 30) * 0.5;
 
+        if (flake.y > canvas.height) {
+          flake.y = 0;
+          flake.x = Math.random() * canvas.width;
+        }
+
+        drawSnowflake(ctx, flake, canvas);
+      });
+
+      animationFrame = requestAnimationFrame(animate);
     }
+
+    animate();
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    }
+  };
+
+  const drawSnowflake = (ctx, flake, canvas) => {
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255, 255, 255, ${
+		  flake.opacity ?? 1 - flake.y / canvas.height
+	  })`;
+    ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+    ctx.fill();
   };
 
   const createSnowflake = (canvas, isAnimated = true, index = 0) => {

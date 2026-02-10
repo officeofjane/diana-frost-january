@@ -53,8 +53,6 @@
           <Wheel width={wheelWrapperWidth} height={wheelWrapperHeight} highlight={slice(scrollIndex).highlight}/>
         </div>
       </div>
-      <p>ScrollIndex: {scrollIndex}</p>
-      <p>Highlight: {slice(scrollIndex).highlight}</p>
     </div>
     <!-- pass down isActive state prop into step layout component, then apply class inside component to trigger animation -->
     <div class="right">

@@ -6,7 +6,6 @@
 
 <div class={["layout-wrapper", {active: isActive}]}>
   <div class="image a">
-    i am step 2
   </div>
   <div class="image b">
   </div>

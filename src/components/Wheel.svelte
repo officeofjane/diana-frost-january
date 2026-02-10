@@ -43,7 +43,7 @@
     .value((d) => d.labels.length);
   const wheelData = wheelPie(data);
 
-  console.log(wheelData);
+  // console.log(wheelData);
 </script>
 
 <svg viewBox="0, 0, {width}, {height}">

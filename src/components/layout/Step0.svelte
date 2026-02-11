@@ -11,7 +11,8 @@
   </div>
   <div class="image c">
   </div>
-  <div class="image d">
+  <div class="image d sticker">
+    <img src="/images/elsa-bottle-sticker.png" alt="" />
   </div>
 </div>
 
@@ -22,7 +23,7 @@
   }
 
   .image {
-    background-color: red;
+    /* background-color: red; */
   }
 
   .image.a {
@@ -50,5 +51,13 @@
   .image.d {
     grid-column: 7 / span 2;
     grid-row: 3 / span 1;
+  }
+
+  .image.sticker img {
+    box-shadow: none;
+  }
+
+  .image.sticker {
+    filter: drop-shadow(4px 8px 0px hsl(216deg 60% 28% / 0.5));
   }
 </style>

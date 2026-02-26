@@ -140,7 +140,7 @@
     width: 100%;
     height: 100%;
     
-    --gray: rgb(220, 220, 220);
+    --gray: rgb(180, 180, 180);
     --label-colour: var(--gray);
   }
   

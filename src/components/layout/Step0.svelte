@@ -5,7 +5,8 @@
 </script>
 
 <div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+  <div class="image a sticker">
+    <img src="/images/elsa-costume.png" alt="" />
   </div>
   <div class="image b">
   </div>
@@ -22,17 +23,12 @@
     grid-template-rows: 2fr 1fr 1fr;
   }
 
-  .image {
-    /* background-color: red; */
-  }
-
   .image.a {
     grid-column: 2 / span 4;
     grid-row: 1;
   }
 
   .active .image.a {
-    background-color: blue;
     animation-duration: 0.5s;
     animation-name: animate-pop;
     animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
@@ -58,6 +54,6 @@
   }
 
   .image.sticker {
-    filter: drop-shadow(4px 8px 0px hsl(216deg 60% 28% / 0.5));
+    filter: drop-shadow(4px 8px 6px hsl(216deg 60% 28% / 0.5));
   }
 </style>

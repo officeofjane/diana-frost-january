@@ -6,14 +6,14 @@
 
 <div class={["layout-wrapper", {active: isActive}]}>
   <div class="image a sticker">
-    <img src="/images/elsa-costume.png" alt="" />
+    <img src="./images/elsa-costume.png" alt="" />
   </div>
   <div class="image b">
   </div>
   <div class="image c">
   </div>
   <div class="image d sticker">
-    <img src="/images/elsa-bottle-sticker.png" alt="" />
+    <img src="./images/elsa-bottle-sticker.png" alt="" />
   </div>
 </div>
 

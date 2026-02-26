@@ -60,4 +60,19 @@ const data = [
 
 const NUM_NODES = data.map(d => d.labels).flat().length;
 
-export { data, NUM_NODES };
+const SHORT_CATEGORY_NAMES = [
+  "Studio",
+  "Experiences",
+  "Sales",
+  "Music",
+  "Games",
+  "Channel",
+  "Fan",
+  "Publishing",
+  "Entertainment",
+  "Store",
+  "Products",
+  "Disney+"
+]
+
+export { data, NUM_NODES, SHORT_CATEGORY_NAMES };

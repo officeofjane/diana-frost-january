@@ -2,13 +2,13 @@
   import { arc, pie } from "d3-shape";
   import { range } from "d3-array";
   import { scaleLinear } from "d3-scale";
-  import { data, NUM_NODES } from "$data/data.js";
+  import { data, NUM_NODES, SHORT_CATEGORY_NAMES } from "$data/data.js";
   import colours from "$data/colours.json";
 
   let { width, height } = $props();
 
-  const MARGIN = 60;
-  const ARC_WIDTH = 16;
+  const MARGIN = 50;
+  const ARC_WIDTH = 18;
   const NODE_RADIUS = 4;
   const labelStartAngle = 360/NUM_NODES/2 - 90;
 
@@ -32,7 +32,9 @@
 
   const wheelPie = pie()
     .sort(null)
-    .value((d) => d.labels.length);
+    // .value((d) => d.labels.length);
+    .value((d, i) => SHORT_CATEGORY_NAMES[i].length + 10);
+
   const wheelData = wheelPie(data);
 </script>
 
@@ -45,26 +47,28 @@
     class="pie"
     transform="translate({width/2}, {height/2})"
   >
-    {#each wheelData as slice}
+    {#each wheelData as slice, i}
     {@const centroid = slice.startAngle + (slice.endAngle - slice.startAngle)/2}
     {@const category = slice.data.category}
-      <path class="arc {category}"
+      <path class="arc {category}" id="path-{category}"
         d={wheelArc(slice)} 
         fill={colours[category]}
       />
       <!-- TO DO: textpath for labels along an arc -->
-      <!-- <text class="category {category}"
-        x="-8"
-        dy="-0.5em"
+      <text class="category {category}"
+        x="11"
+        dy="-8"
         fill={colours[category]}
-        text-anchor="end"
-        transform="rotate({toDegrees(centroid) + labelStartAngle}) translate({innerRadius}, 0)" 
       >
-        {slice.data.name}
-      </text> -->
+        <textPath href="#path-{category}"
+          text-anchor="start"
+        >
+          {SHORT_CATEGORY_NAMES[i]}
+        </textPath>
+      </text>
     {/each}
   </g>
-  <g class="nodes"
+  <!-- <g class="nodes"
     transform="translate({width/2}, {height/2})"
   >
     {#each range(NUM_NODES) as node}
@@ -75,11 +79,16 @@
         transform="rotate({nodeScale(node)})" 
       />
     {/each}
-  </g>
+  </g> -->
 </svg>
 
 <style>
   .node {
     fill: white;
+  }
+
+  text {
+    font-size: 0.875rem;
+    font-weight: 700;
   }
 </style>

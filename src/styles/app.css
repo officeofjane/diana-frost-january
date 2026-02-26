@@ -107,3 +107,12 @@ a:visited {
     transform: translateY(4px);
   }
 }
+
+@keyframes rotateInfinite {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

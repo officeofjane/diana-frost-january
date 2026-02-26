@@ -79,6 +79,6 @@
     display: flex;
     justify-content: center;
 
-    /* background-color: whitesmoke; */
+    animation: rotateInfinite 80s linear infinite;
   }
 </style>

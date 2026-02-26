@@ -1,11 +1,8 @@
 <script>
-  import SnowParticles from "$components/SnowParticles.svelte";
-
   let { hed, subhed } = $props();
 </script>
 
 <div class="container">
-  <SnowParticles />
   <div class="content-wrapper">
     <div class="headline">
       <h1>{@html hed}</h1>

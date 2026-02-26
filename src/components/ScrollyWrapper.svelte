@@ -59,7 +59,7 @@
       {#each narrative as step, i}
       {@const LayoutStep = layoutSteps[i]}
         <div class="bg" class:active={scrollIndex === i}>
-          <Background bgColours={slice(scrollIndex).gradientColours}/>
+          <!-- <Background bgColours={slice(scrollIndex).gradientColours}/> -->
           <LayoutStep isActive={scrollIndex === i}></LayoutStep>
         </div>
       {/each}

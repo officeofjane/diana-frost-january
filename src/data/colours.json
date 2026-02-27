@@ -1,14 +1,14 @@
 {
-  "studio": "#1D3F72",
-  "experiences": "#9DA9D1",
-  "content-sales": "#5699D2" ,
-  "music": "#81CAC9" ,
-  "games": "#71C2CC" ,
-  "channel": "#4996A2" ,
-  "fan": "#275E73" ,
-  "publishing": "#785471" ,
-  "entertainment": "#1D3F72" ,
-  "stores": "#9DA9D1" ,
-  "products": "#5699D2" ,
-  "disney-plus": "#71C2CC"
+  "studio": "hsl(155, 65%, 42%)",
+  "experiences": "hsl(168, 72%, 45%)",
+  "content-sales": "hsl(185, 80%, 50%)",
+  "music": "hsl(198, 75%, 55%)",
+  "games": "hsl(204, 85%, 48%)",
+  "channel": "hsl(212, 70%, 52%)",
+  "fan": "hsl(225, 65%, 58%)",
+  "publishing": "hsl(238, 62%, 62%)",
+  "entertainment": "hsl(250, 60%, 60%)",
+  "stores": "hsl(263, 55%, 62%)",
+  "products": "hsl(278, 52%, 65%)",
+  "disney-plus": "hsl(290, 45%, 62%)"
 }

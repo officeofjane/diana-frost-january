@@ -154,10 +154,17 @@
     .copy {
       width: 70%;
       max-width: var(--copy-width);
-      border-radius: 5px;
+      
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
       padding: 0.5rem 1rem;
-      background-color: white;
-      box-shadow: var(--shadow-elevation-medium);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px) saturate(1.4);
+      /* box-shadow: var(--shadow-elevation-medium); */
+      box-shadow:
+        0 4px 24px rgba(15, 31, 75, 0.08),
+        0 1px 4px rgba(15, 31, 75, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
     }
   }
 </style>

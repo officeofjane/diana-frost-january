@@ -23,8 +23,21 @@
     display: grid;
     place-content: center;
 
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    background:
+      linear-gradient(
+        180deg,
+        hsl(270, 60%, 88%)   0%,
+        hsl(260, 60%, 88%)   5%,
+        hsl(250, 60%, 88%)   15%,
+        hsl(240, 60%, 88%)   38%,
+        hsl(230, 60%, 88%)   58%,
+        hsl(220, 60%, 88%)   76%,
+        hsl(210, 60%, 88%)   83%,
+        hsl(200, 60%, 93%)   100%
+      );
   }
+
 
   .content-wrapper {
     height: 100%;
@@ -34,6 +47,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: 2.625rem;
   }
 
   .arrow {

@@ -47,9 +47,25 @@
 <style>
   .background-wrapper {
     background-blend-mode: multiply;
-    background: linear-gradient(150deg,#e2f0ee,transparent 90%),linear-gradient(330deg,#eefffe,transparent 20%),linear-gradient(225deg,rgba(252,70,107, 0.1),rgba(53,86,255, 0.1),rgba(173,244,255, 0.1),rgba(225,254,255, 0.1),rgba(233,254,251, 0.1),rgba(252,214,255, 0.1),rgba(0,255,242, 0.1)) no-repeat;
+    /* background: linear-gradient(150deg,#e2f0ee,transparent 90%),linear-gradient(330deg,#eefffe,transparent 20%),linear-gradient(225deg,rgba(252,70,107, 0.1),rgba(53,86,255, 0.1),rgba(173,244,255, 0.1),rgba(225,254,255, 0.1),rgba(233,254,251, 0.1),rgba(252,214,255, 0.1),rgba(0,255,242, 0.1)) no-repeat; */
+    background:
+      radial-gradient(ellipse 60% 40% at 10% 20%,  hsl(168, 35%, 88%) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 55% at 90% 85%,  hsl(270, 45%, 82%) 0%, transparent 65%),
+      radial-gradient(ellipse 90% 70% at 55% 50%,  hsl(210, 55%, 88%) 0%, transparent 75%),
+      radial-gradient(ellipse 60% 50% at 85% 10%,  hsl(200, 50%, 92%) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 40% at 30% 100%, hsl(240, 50%, 84%) 0%, transparent 70%),
+      hsl(200, 0%, 100%);
     background-repeat: no-repeat;
     mix-blend-mode: multiply; 
+  }
+
+  .background-wrapper::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
   }
 
   .content-wrapper {
@@ -63,7 +79,7 @@
     font-size: 1.125rem;
   }
 
-  .intro p:first-of-type::first-letter {
+  /* .intro p:first-of-type::first-letter {
     color: white;
     background-color: black;
     border-radius: 2px;
@@ -73,6 +89,20 @@
     padding: 8px 8px;
     margin-right: 6px;
     float: left;
+  } */
+
+  .intro p:first-of-type::first-letter {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 4.2em;
+    line-height: 0.75;
+    float: left;
+    margin-right: 6px;
+    margin-top: 4px;
+    background: linear-gradient(160deg, var(--sky), var(--teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .small-wheel-wrapper {

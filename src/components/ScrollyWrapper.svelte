@@ -4,7 +4,6 @@
   import { NUM_NODES } from '$data/data.js';
   import Scrolly from '$components/helpers/Scrolly.svelte';
   import Wheel from '$components/Wheel.svelte';
-  import Background from '$components/Background.svelte';
   
   import Step0 from '$components/layout/Step0.svelte';
   import Step1 from '$components/layout/Step1.svelte';
@@ -58,8 +57,7 @@
     <div class="right">
       {#each narrative as step, i}
       {@const LayoutStep = layoutSteps[i]}
-        <div class="bg" class:active={scrollIndex === i}>
-          <!-- <Background bgColours={slice(scrollIndex).gradientColours}/> -->
+        <div class="bg step-{i}" class:active={scrollIndex === i}>
           <LayoutStep isActive={scrollIndex === i}></LayoutStep>
         </div>
       {/each}
@@ -158,7 +156,7 @@
       border: 1px solid rgba(255, 255, 255, 0.9);
       border-radius: 16px;
       padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(20px) saturate(1.4);
       /* box-shadow: var(--shadow-elevation-medium); */
       box-shadow:

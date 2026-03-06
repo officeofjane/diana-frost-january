@@ -24,3 +24,9 @@
 .layout-wrapper .image.transparent img {
 	box-shadow: none;
 }
+
+.image.circle {
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+}

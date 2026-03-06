@@ -12,10 +12,15 @@
   grid-gap: 10px;
 }
 
-.layout-wrapper .image img {
+.layout-wrapper .image img, .layout-wrapper video {
   width: 100%;
   object-fit: cover;
 
   border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);	
+  /* box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);	 */
+  filter: drop-shadow(4px 8px 6px hsl(216deg 60% 28% / 0.5));
+}
+
+.layout-wrapper .image.transparent img {
+	box-shadow: none;
 }

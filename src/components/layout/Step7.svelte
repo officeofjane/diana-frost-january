@@ -24,13 +24,12 @@
 
 <style>
   .layout-wrapper {
-    padding: 50px 0 50px 0;
-    grid-template-rows: 2fr 3fr;
+    padding: 30px 0 30px 0;
   }
 
   .image.a {
-    grid-column: 2 / span 5;
-    grid-row: 1;
+    grid-column: 5 / span 5;
+    align-self: end;
   }
 
   .active .image.a {
@@ -39,26 +38,25 @@
     animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
   }
 
-  .image.b {
+  /* .image.b {
     grid-column: 7 / span 4;
-    grid-row: 1 / span 2;
-  }
+  } */
 
   .image.c {
     grid-column: 2 / span 3;
-    grid-row: 2;
-    align-self: center;
+    grid-row: 1;
+    align-self: start;
   }
 
   .image.d {
     grid-column: 4 / span 3;
-    grid-row: 2;
-    align-self: end;
+    grid-row: 1;
+    align-self: center;
   }
 
   .image.e {
-    grid-column: 7 / span 5;
-    grid-row: 2;
-    align-self: center;
+    grid-column: 7 / span 4;
+    grid-row: 1;
+    align-self: end;
   }
 </style>

@@ -27,7 +27,7 @@
 
 <style>
   .layout-wrapper {
-    padding: 50px 0 30px 0;
+    padding: 80px 0 80px 0;
     grid-template-rows: 1fr 1fr;
   }
 

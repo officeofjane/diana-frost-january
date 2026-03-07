@@ -5,13 +5,13 @@
 </script>
 
 <div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+  <div class="image a circle">
+    <img src="./images/scrolly/step3_content/b_blu-ray.jpg" alt="" />
+  </div>
+  <div class="image b">
     <video src="./videos/03_frozen-bluray.mp4" autoplay loop muted>
       <track kind="captions" />
     </video> 
-  </div>
-  <div class="image b circle">
-    <img src="./images/scrolly/step3_content/b_blu-ray.jpg" alt="" />
   </div>
 </div>
 
@@ -21,7 +21,7 @@
   }
 
   .image.a {
-    grid-column: 2 / span 5;
+    grid-column: 2 / span 4;
   }
 
   .active .image.a {
@@ -31,7 +31,8 @@
   }
 
   .image.b {
-    grid-column: 6 / span 4;
+    grid-column: 5 / span 5;
     align-self: end;
+    
   }
 </style>

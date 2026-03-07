@@ -30,7 +30,7 @@
 
 <style>
   .layout-wrapper {
-    padding: 100px 0 30px 0;
+    padding: 100px 0 100px 0;
     grid-template-rows: 2fr 1fr 1fr;
   }
 
@@ -69,7 +69,7 @@
   }
 
   .image.g {
-    grid-column: 9 / span 2;
+    grid-column: 8 / span 2;
     grid-row: 2;
   }
 </style>

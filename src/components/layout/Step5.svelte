@@ -4,26 +4,26 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image b">
+<div class={["layout-wrapper", "e6", {active: isActive}]}>
+  <div class="image b fadeup">
     <img src="./images/scrolly/step5_games/b_nintendo-gameplay.png" alt="" />
   </div>
-  <div class="image a">
+  <div class="image a fadeup">
     <img src="./images/scrolly/step5_games/a_nintendo-3ds.jpg" alt="" />
   </div>
-  <div class="image c">
+  <div class="image c fadeup">
     <img src="./images/scrolly/step5_games/c_nintendo-gameplay-2.jpg" alt="" />
   </div>
-  <div class="image d transparent">
+  <div class="image d fadeup">
     <img src="./images/scrolly/step5_games/d_elsa-tsum.png" alt="" />
   </div>
-  <div class="image e">
+  <div class="image e fadeup">
     <img src="./images/scrolly/step5_games/e_kingdom-hearts-iii-1.jpg" alt="" />
   </div>
-  <div class="image f">
+  <div class="image f fadeup">
     <img src="./images/scrolly/step5_games/f_kingdom-hearts-iii-2.jpg" alt="" />
   </div>
-  <div class="image g transparent">
+  <div class="image g fadeup">
     <img src="./images/scrolly/step5_games/g_anna-tsum.png" alt="" />
   </div>
 </div>

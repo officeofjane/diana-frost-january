@@ -4,17 +4,17 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a circle">
+<div class={["layout-wrapper", "e4", {active: isActive}]}>
+  <div class="image a circle fadeup">
     <img src="./images/scrolly/step10_stores/b_frozen-wedding-dress-collection.jpg" alt="" />
   </div>
-  <div class="image b circle">
+  <div class="image b circle fadeup">
     <img src="./images/scrolly/step10_stores/a_alfred-angelo-for-disney.jpg" alt="" />    
   </div>
-  <div class="image c">
+  <div class="image c fadeup">
     <img src="./images/scrolly/step10_stores/c_alfred-angelo-disneys-elsa-frozen-wedding-dress.jpg" alt="" />
   </div>
-  <div class="image d">
+  <div class="image d fadeup">
     <img src="./images/scrolly/step10_stores/d_frozen-wedding-anna-2.jpg" alt="" />
   </div>
 </div>

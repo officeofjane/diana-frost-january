@@ -4,16 +4,16 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+<div class={["layout-wrapper", "e3", {active: isActive}]}>
+  <div class="image a fadeup">
     <video src="./videos/10_disney-on-ice.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>
   </div>
-  <div class="image b">
+  <div class="image b fadeup">
     <img src="./images/scrolly/step9_entertainment/b_KV-2015.jpg" alt="" />
   </div>
-  <div class="image c">
+  <div class="image c fadeup">
     <video src="./videos/09_shiki-musical.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>

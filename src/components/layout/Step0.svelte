@@ -4,8 +4,8 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+<div class={["layout-wrapper", "e1", {active: isActive}]}>
+  <div class="image a fadeIn">
     <video src="./videos/00_frozen-trailer-trim.mp4" autoplay loop muted>
       <track kind="captions" />
     </video> 

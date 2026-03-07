@@ -118,3 +118,35 @@ a:visited {
     transform: rotate(360deg);
   }
 }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.92) rotate(-2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+    filter: drop-shadow(0px 0px 0px hsl(216deg 60% 28% / 0)) blur(8px);
+  }
+  25% {
+    opacity: 0.6;
+    filter: drop-shadow(4px 8px 6px hsl(216deg 60% 28% / 0.3)) blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(4px 8px 6px hsl(216deg 60% 28% / 0.5));
+  }
+}

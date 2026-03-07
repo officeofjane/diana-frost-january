@@ -4,23 +4,23 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+<div class={["layout-wrapper", "e6", {active: isActive}]}>
+  <div class="image a fadeup">
     <img src="./images/scrolly/step8_publishing/a_novel.webp" alt="" />
   </div>
-  <div class="image b">
+  <div class="image b fadeup">
     <img src="./images/scrolly/step8_publishing/b_book-spread.png" alt="" />
   </div>
-  <div class="image c">
+  <div class="image c fadeup">
     <img src="./images/scrolly/step8_publishing/c_children-books.png" alt="" />
   </div>
-  <div class="image d">
+  <div class="image d fadeup">
     <img src="./images/scrolly/step8_publishing/d_official-magazine-1.jpg" alt="" />
   </div>
-  <div class="image e">
+  <div class="image e fadeup">
     <img src="./images/scrolly/step8_publishing/e_official-magazine-2.jpg" alt="" />
   </div>
-  <div class="image f">
+  <div class="image f fadeup">
     <img src="./images/scrolly/step8_publishing/f_official-magazine-3.webp" alt="" />
   </div>
 </div>
@@ -35,12 +35,6 @@
     grid-column: 2 / span 2;
     grid-row: 1;
     align-self: center;
-  }
-
-  .active .image.a {
-    animation-duration: 0.5s;
-    animation-name: animate-pop;
-    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
   }
 
   .image.b {

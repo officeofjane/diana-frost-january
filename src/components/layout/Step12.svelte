@@ -4,19 +4,19 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+<div class={["layout-wrapper", "e4", {active: isActive}]}>
+  <div class="image a fadeup">
     <video src="./videos/12_once-upon-a-snowman.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>
   </div>
-  <div class="image b">
+  <div class="image b fadeup">
     <img src="./images/scrolly/step12_disney-plus/b_scene.webp" alt="" />
   </div>
-  <div class="image c">
+  <div class="image c fadeup">
     <img src="./images/scrolly/step12_disney-plus/c_once-upon-a-snowman.webp" alt="" />
   </div>
-  <div class="image d">
+  <div class="image d fadeup">
     <img src="./images/scrolly/step12_disney-plus/d_onceuponasnowman_disneyplus_poster.jpg" alt="" />
   </div>
 </div>
@@ -30,12 +30,6 @@
   .image.a {
     grid-column: 2 / span 4;
     grid-row: 1;
-  }
-
-  .active .image.a {
-    animation-duration: 0.5s;
-    animation-name: animate-pop;
-    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
   }
 
   .image.b {

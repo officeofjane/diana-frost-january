@@ -4,20 +4,20 @@
   let { isActive = false } = $props();
 </script>
 
-<div class={["layout-wrapper", {active: isActive}]}>
-  <div class="image a">
+<div class={["layout-wrapper", "e5", {active: isActive}]}>
+  <div class="image a fadeup">
     <img src="./images/scrolly/step2_experiences/a_guests-frozen-kingdom.jpg" alt="" />
   </div>
-  <div class="image b">
+  <div class="image b fadeup">
     <img src="./images/scrolly/step2_experiences/b_olaf.jpg" alt="" />
   </div>
-  <div class="image c">
+  <div class="image c fadeup">
     <img src="./images/scrolly/step2_experiences/c_parade.jpg" alt="" />
   </div>
-  <div class="image d">
+  <div class="image d fadeup">
     <img src="./images/scrolly/step2_experiences/d_frozen-fantasy.jpg" alt="" />
   </div>
-  <div class="image e">
+  <div class="image e fadeup">
     <img src="./images/scrolly/step2_experiences/e_frozen-kingdom.jpg" alt="" />
   </div>
 </div>

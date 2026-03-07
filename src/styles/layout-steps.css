@@ -30,3 +30,114 @@
 	overflow: hidden;
   filter: drop-shadow(4px 8px 6px hsl(216deg 60% 28% / 0.5));
 }
+
+/* entry animations */
+.image.fadeIn {
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+.image.fadeup {
+  opacity: 0;
+  transform: translateY(30px) scale(0.96);
+}
+
+.active.e1 {
+  .image.a {
+    animation: fadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  }
+}
+
+.active.e2 {
+  .image.a {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  }
+
+  .image.b {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+  }
+}
+
+.active.e3 {
+  .image.a {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  }
+
+  .image.b {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+  }
+
+  .image.c {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+  }
+}
+
+.active.e4 {
+  .image.a {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  }
+
+  .image.b {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+
+  .image.c {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  }
+
+  .image.d {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+  }
+}
+
+.active.e5 {
+  .image.a {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  }
+
+  .image.b {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+  }
+
+  .image.c {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+  }
+
+  .image.d {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+  }
+
+  .image.e {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+  }
+}
+
+.active.e6 {
+  .image.a {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  }
+
+  .image.b {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.22s forwards;
+  }
+
+  .image.c {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.34s forwards;
+  }
+
+  .image.d {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.46s forwards;
+  }
+
+  .image.e {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.58s forwards;
+  }
+
+  .image.f {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+  }
+
+  .image.g {
+    animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
+  }
+}

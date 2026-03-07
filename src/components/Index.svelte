@@ -37,9 +37,9 @@
     {#each copy.outro as p}
       <p>{@html p.text}</p>
     {/each}
+    <img src="./images/frozen-iii.webp" alt="" />
   </section>
 
-  <Footer />
   </div>
   
 </div>
@@ -91,7 +91,7 @@
     float: left;
   } */
 
-  .intro p:first-of-type::first-letter {
+  .intro p:first-of-type::first-letter, .outro p:first-of-type::first-letter {
     font-family: var(--serif);
     font-weight: 300;
     font-size: 4.2em;
@@ -110,5 +110,14 @@
     justify-content: center;
 
     animation: rotateInfinite 80s linear infinite;
+  }
+
+  img {
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .outro {
+    padding: 200px 0px;
   }
 </style>

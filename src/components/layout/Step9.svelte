@@ -6,23 +6,24 @@
 
 <div class={["layout-wrapper", {active: isActive}]}>
   <div class="image a">
+    <video src="./videos/10_disney-on-ice.mp4" autoplay loop muted>
+      <track kind="captions" />
+    </video>
   </div>
   <div class="image b">
+    <img src="./images/scrolly/step9_entertainment/b_KV-2015.jpg" alt="" />
   </div>
   <div class="image c">
-  </div>
-  <div class="image d">
+    <video src="./videos/09_shiki-musical.mp4" autoplay loop muted>
+      <track kind="captions" />
+    </video>
   </div>
 </div>
 
 <style>
   .layout-wrapper {
-    padding: 10px 0 10px 0;
-    grid-template-rows: 2fr 1fr 1fr;
-  }
-
-  .image {
-    background-color: red;
+    padding: 100px 0 100px 0;
+    grid-template-rows: 1fr 1fr;
   }
 
   .image.a {
@@ -31,24 +32,20 @@
   }
 
   .active .image.a {
-    background-color: blue;
     animation-duration: 0.5s;
     animation-name: animate-pop;
     animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
   }
 
   .image.b {
-    grid-column: 4 / span 2;
-    grid-row: 2 / span 2;
+    grid-column: 6 / span 2;
+    grid-row: 1;
+    align-self: center;
   }
 
   .image.c {
-    grid-column: 8 / span 2;
-    grid-row: 2 / span 1;
-  }
-
-  .image.d {
-    grid-column: 7 / span 2;
-    grid-row: 3 / span 1;
+    grid-column: 5 / span 5;
+    grid-row: 2;
+    align-self: end;
   }
 </style>

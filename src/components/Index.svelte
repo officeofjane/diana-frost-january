@@ -15,39 +15,37 @@
   <SnowParticles />
   <div class="content-wrapper">
     <Header 
-    hed={copy.hed}
-    subhed={copy.subhed}
-  />
+      hed={copy.hed}
+      subhed={copy.subhed}
+    />
 
-  <section class="intro body-copy">
-    {#each copy.intro as p}
-      <p>{@html p.text}</p>
-    {/each}
-    <div class="small-wheel-wrapper">
-      <SmallWheel width=400 height=400 />
-    </div>
-    <p>{@html copy.transition}</p>
-  </section>
+    <section class="intro body-copy">
+      {#each copy.intro as p}
+        <p>{@html p.text}</p>
+      {/each}
+      <div class="small-wheel-wrapper">
+        <SmallWheel width=400 height=400 />
+      </div>
+      <p>{@html copy.transition}</p>
+    </section>
 
-  <section class="flywheel">
-    <ScrollyWrapper />
-  </section>
+    <section class="flywheel">
+      <ScrollyWrapper />
+    </section>
 
-  <section class="outro body-copy">
-    {#each copy.outro as p}
-      <p>{@html p.text}</p>
-    {/each}
-    <img src="./images/frozen-iii.webp" alt="" />
-  </section>
+    <section class="outro body-copy">
+      {#each copy.outro as p}
+        <p>{@html p.text}</p>
+      {/each}
+      <img src="./images/frozen-iii.webp" alt="" />
+    </section>
 
   </div>
-  
 </div>
 
 <style>
   .background-wrapper {
-    background-blend-mode: multiply;
-    /* background: linear-gradient(150deg,#e2f0ee,transparent 90%),linear-gradient(330deg,#eefffe,transparent 20%),linear-gradient(225deg,rgba(252,70,107, 0.1),rgba(53,86,255, 0.1),rgba(173,244,255, 0.1),rgba(225,254,255, 0.1),rgba(233,254,251, 0.1),rgba(252,214,255, 0.1),rgba(0,255,242, 0.1)) no-repeat; */
+    position: relative;
     background:
       radial-gradient(ellipse 60% 40% at 10% 20%,  hsl(168, 35%, 88%) 0%, transparent 60%),
       radial-gradient(ellipse 70% 55% at 90% 85%,  hsl(270, 45%, 82%) 0%, transparent 65%),
@@ -56,7 +54,20 @@
       radial-gradient(ellipse 100% 40% at 30% 100%, hsl(240, 50%, 84%) 0%, transparent 70%),
       hsl(200, 0%, 100%);
     background-repeat: no-repeat;
+    background-blend-mode: multiply;
     mix-blend-mode: multiply; 
+  }
+
+  .background-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150dvh;
+    background: linear-gradient(to bottom, white 0%, white 66%, transparent 100%);
+    pointer-events: none;
+    z-index: -1;
   }
 
   .background-wrapper::before {

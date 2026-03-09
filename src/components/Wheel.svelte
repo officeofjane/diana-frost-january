@@ -8,8 +8,8 @@
   let { width, height, highlight = "" } = $props();
 
   const MARGIN = 160;
-  const ARC_WIDTH = 21;
-  const NODE_RADIUS = 5.5;
+  const ARC_WIDTH = 24;
+  const NODE_RADIUS = 6;
   const labelStartAngle = 360/NUM_NODES/2 - 90;
 
   const toDegrees = (radians) => radians * 180/Math.PI;
@@ -90,7 +90,7 @@
         fill={colours[category]}
       />
       <text class="category {category}"
-        x="-8"
+        x="-14"
         dy="-0.5em"
         fill={colours[category]}
         opacity={category === highlight ? 1 : 0}
@@ -153,6 +153,7 @@
     font-weight: 500;
 
     &.category {
+      font-size: 1.25rem;
       font-weight: 700;
     }
 

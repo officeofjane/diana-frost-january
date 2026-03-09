@@ -171,5 +171,15 @@
     .mobile-wrapper {
       display: flex;
     }
+
+    .background-wrapper {
+      display: none;
+    }
+  }
+
+  @media (min-width: 561px) {
+    .mobile-wrapper {
+      display: none;
+    }
   }
 </style>

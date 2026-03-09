@@ -11,6 +11,12 @@
   const copy = getContext("copy");
 </script>
 
+<div class="mobile-wrapper">
+  <div class="snowflake-container"><Snowflake width=48 height=48/></div>
+  <h2>Best viewed on desktop</h2>
+  <p>This page is designed for desktop screens. For the best experience, please visit on a laptop or desktop.</p>
+</div>
+
 <div class="background-wrapper">
   <SnowParticles />
   <div class="content-wrapper">
@@ -56,7 +62,7 @@
       hsl(200, 0%, 100%);
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    mix-blend-mode: multiply; 
+    mix-blend-mode: multiply;
   }
 
   .background-wrapper::after {
@@ -87,6 +93,7 @@
   .body-copy {
     max-width: var(--copy-width);
     margin: 0 auto;
+    padding: 0 px;
     margin-bottom: 3rem;
     font-size: 1.125rem;
   }
@@ -127,10 +134,42 @@
   }
 
   .outro {
-    padding: 200px 0px;
+    padding: 200px 12px;
   }
 
   .outro img {
     margin-bottom: 28px;
+  }
+
+  .mobile-wrapper {
+    display: none;
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 10;
+    background: linear-gradient(
+      180deg,
+      hsl(240, 45%, 82%) 0%,
+      hsl(210, 55%, 85%) 40%,
+      hsl(175, 42%, 93%) 100%
+    );
+  }
+
+  .mobile-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .mobile-wrapper .snowflake-container {
+    animation: rotateInfinite 30s linear infinite;
+  }
+
+  @media (max-width: 560px) {
+    .mobile-wrapper {
+      display: flex;
+    }
   }
 </style>

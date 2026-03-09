@@ -1,5 +1,6 @@
 @import "reset.css";
 
+
 /* CSS does not yet support variables for media queries. Reference only (from Josh Comeau):
 * 0-550px — Mobile
 * 550-1100px — Tablet
@@ -17,6 +18,8 @@ Mobile first, default phones from 0px to 549px
 @media (min-width: 1500px) {}
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,700;1,400&display=swap');
+
 @font-face {
   font-family: "InspireTWDC";
   src: url("/fonts/InspireTWDC.woff2") format("woff2");
@@ -24,8 +27,9 @@ Mobile first, default phones from 0px to 549px
 	font-style: normal;
 	font-stretch: normal;
 	font-display: swap;
-
 }
+
+
 
 :root {
   --copy-width: 40rem;
@@ -55,7 +59,7 @@ Mobile first, default phones from 0px to 549px
     18.4px 36.8px 33.3px -3.9px hsl(var(--shadow-colour) / 0.22),
     28.8px 57.5px 52.1px -4.6px hsl(var(--shadow-colour) / 0.14);
 
-  --serif: 'Cormorant Garamond', serif;
+  --serif-caladea: "Caladea", serif;
 }
 
 body {

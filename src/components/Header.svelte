@@ -51,12 +51,16 @@
 
   .content-wrapper {
     height: 100%;
-    margin: 0 1rem;
+    margin: 16px 16px 16px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+
+  .content-wrapper .headline {
+    margin-bottom: 16px;
   }
 
   .logo {
@@ -67,10 +71,10 @@
 
   h1 {
     max-width: 1024px;
-    font-family: var(--serif);
+    font-family: var(--serif-caladea);
     font-size: 3.5rem;
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
     line-height: 1.3;
     color: white;
     text-shadow: 
@@ -85,11 +89,11 @@
   }
 
   h2 {
-    font-family: "Playfair Display", serif;
+    font-family: var(--serif-caladea);
     font-style: italic;
     font-weight: 400;
     font-size: 1.375rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     color: var(--subhead-text-color);
     opacity: 0.9;
   }
@@ -126,7 +130,6 @@
     height: 20px;
     fill: var(--subhead-text-color);
   }
-
 
   .arrow {
     width: 2rem;

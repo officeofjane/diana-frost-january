@@ -41,7 +41,6 @@
       <img src="./images/frozen-iii.webp" alt="" />
       <Snowflake />
     </section>
-
   </div>
 </div>
 
@@ -92,30 +91,27 @@
     font-size: 1.125rem;
   }
 
-  /* .intro p:first-of-type::first-letter {
-    color: white;
-    background-color: black;
-    border-radius: 2px;
-    box-shadow: 3px 3px 0 red;
-    font-size: 2.25rem;
-    font-weight: 700;
-    padding: 8px 8px;
-    margin-right: 6px;
-    float: left;
-  } */
-
   .intro p:first-of-type::first-letter, .outro p:first-of-type::first-letter {
-    font-family: var(--serif);
+    font-family: var(--serif-lora);
     font-weight: 300;
     font-size: 4.2em;
     line-height: 0.75;
     float: left;
     margin-right: 6px;
     margin-top: 4px;
-    background: linear-gradient(160deg, var(--sky), var(--teal));
+    background: linear-gradient(
+      120deg,
+      hsl(245, 45%, 35%)  0%,
+      hsl(220, 55%, 38%) 15%,
+      hsl(210, 60%, 42%) 30%,
+      hsl(210, 60%, 42%) 55%,
+      hsl(180, 50%, 38%) 85%,
+      hsl(175, 48%, 32%) 100%
+    );
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 
   .small-wheel-wrapper {

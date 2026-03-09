@@ -66,11 +66,12 @@
 
   h1 {
     max-width: 1024px;
-    font-family: var(--serif-caladea);
-    font-size: 3.5rem;
+    /* font-family: var(--serif-caladea); */
+    font-family: var(--serif-lora);
+    font-size: 3.25rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    line-height: 1.3;
+    line-height: 1.35;
     color: white;
     text-shadow: 
       0 0 .1rem hsl(211deg 46% 53%),
@@ -81,6 +82,8 @@
       0 0 1.5rem hsl(202deg 60% 88%),
       0 0 2rem hsl(201deg 44% 87%);
     filter: drop-shadow(3px 3px 3px hsl(216deg 72% 36% / 0.3)); 
+
+    animation: riseReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   h2 {

@@ -16,9 +16,10 @@
       <stop offset="100%" stop-color="hsl(210, 55%, 84%)" />
     </linearGradient>
     <linearGradient id="gradient-top" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%"   stop-color="hsl(195, 80%, 97%)" />
-      <stop offset="30%"  stop-color="hsl(200, 60%, 92%)" />
-      <stop offset="100%" stop-color="white" />
+      <stop offset="0%" stop-color="white" />
+      <stop offset="20%"  stop-color="hsl(200, 60%, 92%)" />
+      <stop offset="70%"   stop-color="hsl(195, 80%, 97%)" />
+      <stop offset="100%" stop-color="hsl(0, 0%, 99.5%)" />
     </linearGradient>
     <linearGradient id="mask-distant-grad" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%"   stop-color="white" stop-opacity="0" />

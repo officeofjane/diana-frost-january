@@ -19,6 +19,7 @@ Mobile first, default phones from 0px to 549px
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 @font-face {
   font-family: "InspireTWDC";
@@ -36,6 +37,19 @@ Mobile first, default phones from 0px to 549px
 
   --colour-text: #1a2744;
   --subhead-text-color: #204c5e;
+
+  --color-studio: hsl(155, 65%, 42%);
+  --color-experiences: hsl(168, 72%, 45%);
+  --color-content-sales: hsl(185, 80%, 50%);
+  --color-music: hsl(198, 75%, 55%);
+  --color-games: hsl(204, 85%, 48%);
+  --color-channel: hsl(212, 70%, 52%);
+  --color-fan: hsl(225, 65%, 58%);
+  --color-publishing: hsl(238, 62%, 62%);
+  --color-entertainment: hsl(250, 60%, 60%);
+  --color-stores: hsl(263, 55%, 62%);
+  --color-products: hsl(278, 52%, 65%);
+  --color-disney-plus: hsl(290, 45%, 62%);
 
   --shadow-colour: 222deg 40% 25%;
   --shadow-elevation-low:
@@ -58,6 +72,7 @@ Mobile first, default phones from 0px to 549px
     28.8px 57.5px 52.1px -4.6px hsl(var(--shadow-colour) / 0.14);
 
   --serif-caladea: "Caladea", serif;
+  --serif-lora: "Lora", serif;
 }
 
 body {
@@ -91,6 +106,17 @@ a:visited {
   100% {
     opacity: 1;
     transform: scale(1, 1);
+  }
+}
+
+@keyframes riseReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

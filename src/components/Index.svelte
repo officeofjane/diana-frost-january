@@ -6,7 +6,7 @@
   import SmallWheel from '$components/SmallWheel.svelte';
   import Wheel from '$components/Wheel.svelte';
   import ScrollyWrapper from '$components/ScrollyWrapper.svelte';
-  import Footer from '$components/Footer.svelte';
+  import Snowflake from '$components/Snowflake.svelte';
 
   const copy = getContext("copy");
 </script>
@@ -27,6 +27,7 @@
         <SmallWheel width=400 height=400 />
       </div>
       <p>{@html copy.transition}</p>
+      <Snowflake />
     </section>
 
     <section class="flywheel">
@@ -38,6 +39,7 @@
         <p>{@html p.text}</p>
       {/each}
       <img src="./images/frozen-iii.webp" alt="" />
+      <Snowflake />
     </section>
 
   </div>
@@ -130,5 +132,9 @@
 
   .outro {
     padding: 200px 0px;
+  }
+
+  .outro img {
+    margin-bottom: 28px;
   }
 </style>

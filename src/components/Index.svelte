@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import { getContext } from 'svelte';
 
   import SnowParticles from "$components/SnowParticles.svelte";
@@ -9,6 +10,10 @@
   import Snowflake from '$components/Snowflake.svelte';
 
   const copy = getContext("copy");
+
+  onMount(() => {
+    document.body.style.visibility = 'visible';
+  })
 </script>
 
 <div class="mobile-wrapper">
@@ -174,6 +179,7 @@
 
     .background-wrapper {
       display: none;
+      visibility: hidden;
     }
   }
 

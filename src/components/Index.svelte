@@ -30,7 +30,7 @@
       subhed={copy.subhed}
     />
 
-    <section class="intro body-copy">
+    <section class="intro body-copy copy">
       {#each copy.intro as p}
         <p>{@html p.text}</p>
       {/each}
@@ -45,7 +45,7 @@
       <ScrollyWrapper />
     </section>
 
-    <section class="outro body-copy">
+    <section class="outro body-copy copy">
       {#each copy.outro as p}
         <p>{@html p.text}</p>
       {/each}

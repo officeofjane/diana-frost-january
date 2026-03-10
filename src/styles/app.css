@@ -97,6 +97,77 @@ a:visited {
 	color: var(--colour-blue-dark);
 }
 
+.copy p span {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  background: hsla(204, 85%, 48%, 0.08);
+  color: var(--color-games);
+}
+
+.copy .studio {
+  background: hsla(155, 65%, 42%, 0.08);
+  color: var(--color-studio);
+}
+
+.copy .experiences {
+  background: hsla(168, 72%, 45%, 0.08);
+  color: var(--color-experiences);
+}
+
+.copy .content-sales {
+  background: hsla(185, 80%, 50%, 0.08);
+  color: var(--color-content-sales);
+}
+
+.copy .music {
+  background: hsla(198, 75%, 55%, 0.08);
+  color: var(--color-music);
+}
+
+.copy .games {
+  background: hsla(204, 85%, 48%, 0.08);
+  color: var(--color-games);
+}
+
+.copy .channel {
+  background: hsla(212, 70%, 52%, 0.08);
+  color: var(--color-channel);
+}
+
+.copy .fan {
+  background: hsla(225, 65%, 58%, 0.08);
+  color: var(--color-fan);
+}
+
+.copy .publishing {
+  background: hsla(238, 62%, 62%, 0.08);
+  color: var(--color-publishing);
+}
+
+.copy .entertainment {
+  background: hsla(250, 60%, 60%, 0.08);
+  color: var(--color-entertainment);
+}
+
+.copy .stores {
+  background: hsla(263, 55%, 62%, 0.08);
+  color: var(--color-stores);
+}
+
+.copy .products {
+  background: hsla(278, 52%, 65%, 0.08);
+  color: var(--color-products);
+}
+
+.copy .disney-plus {
+  background: hsla(290, 45%, 62%, 0.08);
+  color: var(--color-disney-plus);
+}
+
 @keyframes animate-pop {
   0% {
     opacity: 0;

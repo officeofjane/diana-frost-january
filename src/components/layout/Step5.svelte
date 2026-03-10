@@ -1,7 +1,7 @@
 <script>
   import "$styles/layout-steps.css";
   
-  let { isActive = false } = $props();
+  let { isActive = false, copy = "" } = $props();
 </script>
 
 <div class={["layout-wrapper", "e6", {active: isActive}]}>
@@ -25,6 +25,11 @@
   </div>
   <div class="image g fadeup">
     <img src="./images/scrolly/step5_games/g_anna-tsum.png" alt="" />
+  </div>
+  <div class="copy">
+    {#each copy.text as p}
+      <p>{@html p}</p>
+    {/each}
   </div>
 </div>
 
@@ -71,5 +76,10 @@
   .image.g {
     grid-column: 8 / span 2;
     grid-row: 2;
+  }
+
+  .copy {
+    grid-column: 3 / span 5;
+    grid-row: 1;
   }
 </style>

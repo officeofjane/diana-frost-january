@@ -53,26 +53,14 @@
         </div>
       </div>
     </div>
-    <!-- pass down isActive state prop into step layout component, then apply class inside component to trigger animation -->
-    <div class="right">
-      {#each narrative as step, i}
-      {@const LayoutStep = layoutSteps[i]}
-        <div class="bg step-{i}" class:active={scrollIndex === i}>
-          <LayoutStep isActive={scrollIndex === i}></LayoutStep>
-        </div>
-      {/each}
-    </div>
-    
   </div>
+
   <div class="steps-wrapper">
     <Scrolly bind:value={scrollIndex}>
-      {#each copy.scrolly as step, i}
-        <div class="step" class:active={scrollIndex === i}>
-          <div class="copy">
-            {#each step.text as p}
-              <p>{@html p}</p>
-            {/each}
-          </div>
+      {#each narrative as step, i}
+      {@const LayoutStep = layoutSteps[i]}
+        <div class="step step-{i}">
+          <LayoutStep isActive={scrollIndex === i} copy={copy.scrolly[i]}></LayoutStep>
         </div>
       {/each}
     </Scrolly>
@@ -87,19 +75,11 @@
     grid-template-columns: minmax(350px, 28%) 1fr;
   }
 
-  .sticky {
+  .left {
     height: 100vh;
     position: sticky;
     top: 0;
     left: 0;
-    grid-column: 1 / span 2;
-    display: grid;
-    grid-template-columns: subgrid;
-  }
-
-  .left {
-    /* background-color: aliceblue; */
-    position: relative;
     overflow: hidden;
   }
 
@@ -119,50 +99,8 @@
     transition: transform 0.7s ease-in;
   }
 
-  .right {
-    position: relative;
-  }
-
-  .bg {
-    opacity: 0;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  .bg.active {
-    opacity: 1;
-  }
-
-  .steps-wrapper {
-    grid-column: 2;
-    margin-top: -100vh;
-  }
-
   .step {
-    position: relative;
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .copy {
-      width: 70%;
-      max-width: var(--copy-width);
-      
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      padding: 0.5rem 1rem;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(20px) saturate(1.4);
-      /* box-shadow: var(--shadow-elevation-medium); */
-      box-shadow:
-        0 4px 24px rgba(15, 31, 75, 0.08),
-        0 1px 4px rgba(15, 31, 75, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.95);
-    }
   }
 </style>

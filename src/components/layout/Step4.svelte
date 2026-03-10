@@ -1,7 +1,7 @@
 <script>
   import "$styles/layout-steps.css";
 
-  let { isActive = false } = $props();
+  let { isActive = false, copy = "" } = $props();
 </script>
 
 <div class={["layout-wrapper", "e4", {active: isActive}]}>
@@ -18,6 +18,11 @@
   </div>
   <div class="image d fadeup">
     <img src="./images/scrolly/step4_music/d_soundtrack-back.jpg" alt="" />
+  </div>
+  <div class="copy">
+    {#each copy.text as p}
+      <p>{@html p}</p>
+    {/each}
   </div>
 </div>
 
@@ -48,5 +53,10 @@
     grid-column: 8 / span 2;
     grid-row: 2;
     /* align-self: center;s */
+  }
+
+  .copy {
+    grid-column: 3 / span 5;
+    grid-row: 1;
   }
 </style>

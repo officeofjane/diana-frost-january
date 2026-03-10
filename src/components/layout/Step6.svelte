@@ -1,7 +1,7 @@
 <script>
   import "$styles/layout-steps.css";
   
-  let { isActive = false } = $props();
+  let { isActive = false, copy = "" } = $props();
 </script>
 
 <div class={["layout-wrapper", "e5", {active: isActive}]}>
@@ -21,6 +21,11 @@
     <video src="./videos/06_lego-frozen.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>
+  </div>
+  <div class="copy">
+    {#each copy.text as p}
+      <p>{@html p}</p>
+    {/each}
   </div>
 </div>
 
@@ -56,5 +61,10 @@
     grid-column: 5 / span 5;
     grid-row: 2;
     align-self: end;
+  }
+
+  .copy {
+    grid-column: 3 / span 5;
+    grid-row: 1;
   }
 </style>

@@ -1,7 +1,7 @@
 <script>
   import "$styles/layout-steps.css";
   
-  let { isActive = false } = $props();
+  let { isActive = false, copy = "" } = $props();
 </script>
 
 <div class={["layout-wrapper", "e3", {active: isActive}]}>
@@ -17,6 +17,11 @@
     <video src="./videos/09_shiki-musical.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>
+  </div>
+  <div class="copy">
+    {#each copy.text as p}
+      <p>{@html p}</p>
+    {/each}
   </div>
 </div>
 
@@ -47,5 +52,10 @@
     grid-column: 5 / span 5;
     grid-row: 2;
     align-self: end;
+  }
+
+  .copy {
+    grid-column: 3 / span 5;
+    grid-row: 1;
   }
 </style>

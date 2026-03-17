@@ -53,7 +53,7 @@
 
 .active.e1 {
   .image.a {
-    animation: fadeIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
   }
 }
 

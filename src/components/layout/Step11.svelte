@@ -4,7 +4,7 @@
   let { isActive = false, copy = "" } = $props();
 </script>
 
-<div class={["layout-wrapper", "e5", {active: isActive}]}>
+<div class={["layout-wrapper", "e6", {active: isActive}]}>
   <div class="image a fadeup">
     <img src="./images/scrolly/step11_products/toy-elsa.png" alt="" /> 
   </div>
@@ -29,7 +29,7 @@
 
 <style>
   .layout-wrapper {
-    padding: 100px 0 100px 0;
+    padding: 50px 0 50px 0;
     grid-template-rows: 1fr 1fr;
   }
 
@@ -38,32 +38,49 @@
     grid-row: 1;
   }
 
-  .image.b {
-    grid-column: 4 / span 2;
-    grid-row: 1;
-    align-self: center;
+  .image.a img {
+    transform: rotate(-0.03turn);
   }
 
-  .image.c {
-    grid-column: 6 / span 3;
+  .image.b {
+    grid-column: 4 / span 2;
     grid-row: 1;
     align-self: end;
   }
 
-  .image.d {
-    grid-column: 3 / span 2;
-    grid-row: 2;
-    align-self: start;
+  .image.b img {
+    transform: rotate(0.025turn);
   }
 
-  .image.e {
-    grid-column: 5 / span 5;
+  .image.c {
+    grid-column: 6 / span 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+  }
+
+  .image.d {
+    grid-column: 7 / span 2;
     grid-row: 2;
     align-self: center;
   }
 
+  .image.d img {
+    transform: rotate(0.03turn);
+  }
+
+  .image.e {
+    grid-column: 2 / span 5;
+    grid-row: 2;
+    align-self: end;
+  }
+
+  .image.e img {
+    transform: rotate(-0.005turn);
+  }
+
   .copy {
-    grid-column: 3 / span 5;
+    grid-column: 6 / span 4;
     grid-row: 1;
+    align-self: center;
   }
 </style>

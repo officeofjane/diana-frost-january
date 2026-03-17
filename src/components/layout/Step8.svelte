@@ -20,9 +20,6 @@
   <div class="image e fadeup">
     <img src="./images/scrolly/step8_publishing/e_official-magazine-2.jpg" alt="" />
   </div>
-  <div class="image f fadeup">
-    <img src="./images/scrolly/step8_publishing/f_official-magazine-3.webp" alt="" />
-  </div>
   <div class="copy">
     {#each copy.text as p}
       <p>{@html p}</p>
@@ -32,7 +29,7 @@
 
 <style>
   .layout-wrapper {
-    padding: 80px 0 80px 0;
+    padding: 60px 0 60px 0;
     grid-template-rows: 1fr 1fr;
   }
 
@@ -54,24 +51,18 @@
   }
 
   .image.d {
-    grid-column: 4 / span 2;
+    grid-column: 8 / span 2;
     grid-row: 2;
-    align-self: center;
   }
 
   .image.e {
     grid-column: 6 / span 2;
     grid-row: 2;
-  }
-
-  .image.f {
-    grid-column: 8 / span 2;
-    grid-row: 2;
-    align-self: end;
+    align-self: center;
   }
 
   .copy {
-    grid-column: 3 / span 5;
-    grid-row: 1;
+    grid-column: 2 / span 3;
+    grid-row: 2;
   }
 </style>

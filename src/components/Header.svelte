@@ -69,7 +69,7 @@
     /* font-family: var(--serif-caladea); */
     font-family: var(--serif-lora);
     font-size: 3.25rem;
-    font-weight: 700;
+    font-weight: 550;
     letter-spacing: -0.01em;
     line-height: 1.35;
     color: white;

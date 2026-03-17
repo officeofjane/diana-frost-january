@@ -1,10 +1,10 @@
 <script>
   import "$styles/layout-steps.css";
   
-  let { isActive = false } = $props();
+  let { isActive = false, copy = "" } = $props();
 </script>
 
-<div class={["layout-wrapper", "e3", {active: isActive}]}>
+<div class={["layout-wrapper", "e4", {active: isActive}]}>
   <div class="image a fadeup">
     <video src="./videos/10_disney-on-ice.mp4" autoplay loop muted>
       <track kind="captions" />
@@ -18,34 +18,49 @@
       <track kind="captions" />
     </video>
   </div>
+  <div class="copy">
+    {#each copy.text as p}
+      <p>{@html p}</p>
+    {/each}
+  </div>
 </div>
 
 <style>
   .layout-wrapper {
-    padding: 100px 0 100px 0;
+    padding: 50px 0 50px 0;
     grid-template-rows: 1fr 1fr;
   }
 
   .image.a {
     grid-column: 2 / span 4;
     grid-row: 1;
+    align-self: center;
+    padding-right: 20px;
   }
 
-  .active .image.a {
-    animation-duration: 0.5s;
-    animation-name: animate-pop;
-    animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+  .image.a video {
+    transform: rotate(-0.01turn);
   }
 
   .image.b {
-    grid-column: 6 / span 2;
-    grid-row: 1;
-    align-self: center;
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .image.b img {
+    transform: rotate(-0.03turn);
   }
 
   .image.c {
     grid-column: 5 / span 5;
     grid-row: 2;
-    align-self: end;
+    align-self: start;
+  }
+
+  .copy {
+    grid-column: 6 / span 4;
+    grid-row: 1;
+    /* align-self: end; */
   }
 </style>

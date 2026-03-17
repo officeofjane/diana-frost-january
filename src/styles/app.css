@@ -221,11 +221,11 @@ a:visited {
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(30px) scale(0.92) rotate(-2deg);
+    transform: translateY(30px) scale(0.92) rotate(-6deg);
   }
   60% {
     opacity: 1;
-    transform: translateY(-6px) scale(1.02) rotate(0.5deg);
+    transform: translateY(-6px) scale(1.02) rotate(2deg);
   }
   100% {
     opacity: 1;

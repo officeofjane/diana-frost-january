@@ -6,21 +6,18 @@
 
 <div class={["layout-wrapper", "e5", {active: isActive}]}>
   <div class="image a fadeup">
-    <img src="./images/scrolly/step6_channel/a_northern-lights-promo.webp" alt="" />
+    <video src="./videos/06_lego-frozen.mp4" autoplay loop muted>
+      <track kind="captions" />
+    </video>
   </div>
   <div class="image b fadeup">
     <img src="./images/scrolly/step6_channel/b_northern-lights-characters.jpg" alt="" />
   </div>
   <div class="image c fadeup">
-    <img src="./images/scrolly/step6_channel/c_lego-frozen-northern-lights-figures.jpg" alt="" />
-  </div>
-  <div class="image d fadeup">
     <img src="./images/scrolly/step6_channel/d_northern-lights-poster.webp" alt="" />
   </div>
-  <div class="image e fadeup">
-    <video src="./videos/06_lego-frozen.mp4" autoplay loop muted>
-      <track kind="captions" />
-    </video>
+  <div class="image d fadeup">
+    <img src="./images/scrolly/step6_channel/a_northern-lights-promo.webp" alt="" />
   </div>
   <div class="copy">
     {#each copy.text as p}
@@ -31,40 +28,48 @@
 
 <style>
   .layout-wrapper {
-    padding: 100px 0 100px 0;
+    padding: 20px 0 30px 0;
     grid-template-rows: 1fr 1fr;
   }
 
   .image.a {
-    grid-column: 2 / span 3;
+    grid-column: 2 / span 5;
     grid-row: 1;
+    align-self: end;
+    padding-bottom: 20px;
   }
 
   .image.b {
-    grid-column: 4 / span 3;
+    grid-column: 7 / span 3;
     grid-row: 1;
     align-self: center;
+  }
+
+  .image.b img {
+    transform: rotate(-0.005turn);
   }
 
   .image.c {
     grid-column: 8 / span 2;
-    grid-row: 1;
-    align-self: center;
-  }
-
-  .image.d {
-    grid-column: 2 / span 2;
     grid-row: 2;
   }
 
-  .image.e {
-    grid-column: 5 / span 5;
+  .image.c img {
+    transform: rotate(0.02turn);
+  }
+
+  .image.d {
+    grid-column: 6 / span 3;
     grid-row: 2;
     align-self: end;
   }
 
+  .image.d img {
+    transform: rotate(-0.01turn);
+  }
+
   .copy {
-    grid-column: 3 / span 5;
-    grid-row: 1;
+    grid-column: 3 / span 4;
+    grid-row: 2;
   }
 </style>

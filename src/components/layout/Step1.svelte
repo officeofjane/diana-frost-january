@@ -44,6 +44,10 @@
     align-self: end;
   }
 
+  .image.b img {
+    transform: rotate(0.015turn);
+  }
+
   .image.c {
     grid-column: 8 / span 2;
     grid-row: 2 / span 2;
@@ -52,10 +56,16 @@
   .image.d {
     grid-column: 4 / span 4;
     grid-row: 3 / span 2;
+    padding-bottom: 14px;
+    align-self: end;
+  }
+
+  .image.d img {
+    transform: rotate(-0.01turn);
   }
 
   .copy {
-    grid-column: 3 / span 5;
-    grid-row: 1;
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 2;
   }
 </style>

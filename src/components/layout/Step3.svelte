@@ -5,13 +5,13 @@
 </script>
 
 <div class={["layout-wrapper", "e2", {active: isActive}]}>
-  <div class="image a circle fadeup">
-    <img src="./images/scrolly/step3_content/b_blu-ray.jpg" alt="" />
-  </div>
-  <div class="image b fadeup">
+  <div class="image a fadeup">
     <video src="./videos/03_frozen-bluray.mp4" autoplay loop muted>
       <track kind="captions" />
     </video> 
+  </div>
+  <div class="image b circle fadeup">
+    <img src="./images/scrolly/step3_content/b_blu-ray.jpg" alt="" />
   </div>
   <div class="copy">
     {#each copy.text as p}
@@ -26,16 +26,23 @@
   }
 
   .image.a {
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 5;
+    grid-row: 1;
+  }
+
+  .image.a video {
+    transform: rotate(-0.015turn);
   }
 
   .image.b {
-    grid-column: 5 / span 5;
-    align-self: end;
+    grid-column: 7 / span 3;
+    grid-row: 1 / span 2;
+    align-self: center;
   }
-
+  
   .copy {
-    grid-column: 3 / span 5;
-    grid-row: 1;
+    grid-column: 3 / span 4;
+    grid-row: 2;
+    align-self: start;
   }
 </style>

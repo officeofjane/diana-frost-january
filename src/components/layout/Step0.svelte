@@ -24,7 +24,6 @@
 
   .image.a {
     grid-column: 2 / 10;
-    align-self: center;
   }
 
   video {
@@ -32,7 +31,8 @@
   }
 
   .copy {
-    grid-column: 3 / span 5;
+    grid-column: 3 / span 6;
     grid-row: 1;
+    align-self: end;
   }
 </style>

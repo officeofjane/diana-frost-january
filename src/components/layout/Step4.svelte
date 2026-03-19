@@ -40,36 +40,25 @@
 
   .image.b {
     grid-column: 7 / span 3;
-    grid-row: 1 / span 2;
+    grid-row: 1;
     align-self: center;
-  }
-
-  .image.b img {
-    transform: rotate(0.015turn);
   }
 
   .image.c {
     grid-column: 6 / span 2;
     grid-row: 2;
-    align-self: center;
-  }
-
-  .image.c img {
-    transform: rotate(-0.01turn);
+    align-self: start;
   }
 
   .image.d {
     grid-column: 8 / span 2;
     grid-row: 2;
-    align-self: end;
-  }
-
-  .image.d img {
-    transform: rotate(0.02turn);
+    align-self: start;
   }
 
   .copy {
     grid-column: 2 / span 4;
     grid-row: 2;
+    align-self: start;
   }
 </style>

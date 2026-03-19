@@ -11,10 +11,10 @@
     </video>
   </div>
   <div class="image b fadeup">
-    <img src="./images/scrolly/step6_channel/b_northern-lights-characters.jpg" alt="" />
+    <img src="./images/scrolly/step6_channel/d_northern-lights-poster.webp" alt="" />
   </div>
   <div class="image c fadeup">
-    <img src="./images/scrolly/step6_channel/d_northern-lights-poster.webp" alt="" />
+    <img src="./images/scrolly/step6_channel/b_northern-lights-characters.jpg" alt="" />
   </div>
   <div class="image d fadeup">
     <img src="./images/scrolly/step6_channel/a_northern-lights-promo.webp" alt="" />
@@ -36,26 +36,17 @@
     grid-column: 2 / span 5;
     grid-row: 1;
     align-self: end;
-    padding-bottom: 20px;
   }
 
   .image.b {
-    grid-column: 7 / span 3;
+    grid-column: 7 / span 2;
     grid-row: 1;
-    align-self: center;
-  }
-
-  .image.b img {
-    transform: rotate(-0.005turn);
+    align-self: end;
   }
 
   .image.c {
-    grid-column: 8 / span 2;
+    grid-column: 6 / span 3;
     grid-row: 2;
-  }
-
-  .image.c img {
-    transform: rotate(0.02turn);
   }
 
   .image.d {
@@ -64,12 +55,8 @@
     align-self: end;
   }
 
-  .image.d img {
-    transform: rotate(-0.01turn);
-  }
-
   .copy {
-    grid-column: 3 / span 4;
+    grid-column: 2 / span 4;
     grid-row: 2;
   }
 </style>

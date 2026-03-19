@@ -6,7 +6,7 @@
 
 <div class={["layout-wrapper", "e4", {active: isActive}]}>
   <div class="image a fadeup">
-    <video src="./videos/10_disney-on-ice.mp4" autoplay loop muted>
+    <video src="./videos/09_shiki-musical.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>
   </div>
@@ -14,7 +14,7 @@
     <img src="./images/scrolly/step9_entertainment/b_KV-2015.jpg" alt="" />
   </div>
   <div class="image c fadeup">
-    <video src="./videos/09_shiki-musical.mp4" autoplay loop muted>
+    <video src="./videos/10_disney-on-ice.mp4" autoplay loop muted>
       <track kind="captions" />
     </video>
   </div>
@@ -32,35 +32,26 @@
   }
 
   .image.a {
-    grid-column: 2 / span 4;
+    grid-column: 2 / span 5;
     grid-row: 1;
-    align-self: center;
-    padding-right: 20px;
-  }
-
-  .image.a video {
-    transform: rotate(-0.01turn);
+    align-self: end;
   }
 
   .image.b {
-    grid-column: 2 / span 2;
-    grid-row: 2;
-    align-self: start;
-  }
-
-  .image.b img {
-    transform: rotate(-0.03turn);
+    grid-column: 7 / span 2;
+    grid-row: 1;
+    align-self: end;
   }
 
   .image.c {
-    grid-column: 5 / span 5;
+    grid-column: 6 / span 4;
     grid-row: 2;
     align-self: start;
   }
 
   .copy {
-    grid-column: 6 / span 4;
-    grid-row: 1;
+    grid-column: 2 / span 4;
+    grid-row: 2;
     /* align-self: end; */
   }
 </style>

@@ -27,16 +27,12 @@
 <style>
   .layout-wrapper {
     padding: 50px 0 50px 0;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
   }
 
   .image.a {
     grid-column: 2 / span 4;
     grid-row: 1;
-  }
-
-  .image.a img {
-    transform: rotate(-0.02turn);
   }
 
   .image.b {
@@ -45,30 +41,21 @@
     align-self: end;
   }
 
-  .image.b img {
-    transform: rotate(0.01turn);
-  }
-
   .image.c {
     grid-column: 8 / span 2;
-    grid-row: 1 / span 2;
-    align-self: center;
+    grid-row: 1;
+    align-self: end;
   }
-
-  .image.c img {
-    transform: rotate(0.01turn);
-  }
-
 
   .image.d {
-    grid-column: 6 / span 3;
+    grid-column: 6 / span 4;
     grid-row: 2;
-    align-self: end;
+    align-self: start;
   }
 
   .copy {
     grid-column: 2 / span 4;
     grid-row: 2;
-    padding-right: 30px;
+    align-self: center;
   }
 </style>

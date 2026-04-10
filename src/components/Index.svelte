@@ -5,6 +5,7 @@
   import SnowParticles from "$components/SnowParticles.svelte";
   import Header from '$components/Header.svelte';
   import SmallWheel from '$components/SmallWheel.svelte';
+  import FullWheel from '$components/FullWheel.svelte';
   import Wheel from '$components/Wheel.svelte';
   import ScrollyWrapper from '$components/ScrollyWrapper.svelte';
   import Snowflake from '$components/Snowflake.svelte';
@@ -35,7 +36,8 @@
         <p>{@html p.text}</p>
       {/each}
       <div class="small-wheel-wrapper">
-        <SmallWheel width=400 height=400 />
+        <!-- <SmallWheel width=400 height=400 /> -->
+         <FullWheel width=800 height=800 highlight="all"/>
       </div>
       <p>{@html copy.transition}</p>
       <Snowflake />

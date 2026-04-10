@@ -36,10 +36,6 @@
     align-self: start;
   }
 
-  .image.a img {
-    transform: rotate(-0.02turn);
-  }
-
   .image.b {
     grid-column: 4 / span 3;
     grid-row: 1;
@@ -47,28 +43,16 @@
     padding-left: 20px;
   }
 
-  .image.b img {
-    transform: rotate(0.025turn);
-  }
-
   .image.c {
-    grid-column: 7 / span 4;
+    grid-column: 6 / span 4;
     grid-row: 1;
     align-self: center;
-  }
-
-  .image.c img {
-    transform: rotate(-0.01turn);
   }
 
   .image.d {
     grid-column: 6 / span 4;
     grid-row: 2;
     align-self: start;
-  }
-
-  .image.d img {
-    transform: rotate(-0.015turn);
   }
 
   .copy {

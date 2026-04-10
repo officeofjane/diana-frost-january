@@ -28,20 +28,17 @@
   .image.a {
     grid-column: 2 / span 5;
     grid-row: 1;
-  }
-
-  .image.a video {
-    transform: rotate(-0.015turn);
+    align-self: end;
   }
 
   .image.b {
     grid-column: 7 / span 3;
-    grid-row: 1 / span 2;
-    align-self: center;
+    grid-row: 1;
+    align-self: end;
   }
   
   .copy {
-    grid-column: 3 / span 4;
+    grid-column: 3 / span 6;
     grid-row: 2;
     align-self: start;
   }

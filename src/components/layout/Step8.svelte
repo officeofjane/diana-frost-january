@@ -36,33 +36,35 @@
   .image.a {
     grid-column: 2 / span 2;
     grid-row: 1;
-    align-self: center;
+    align-self: end;
   }
 
   .image.b {
     grid-column: 4 / span 3;
     grid-row: 1;
+    align-self: end;
   }
 
   .image.c {
     grid-column: 7 / span 3;
     grid-row: 1;
-    align-self: center;
+    align-self: end;
   }
 
   .image.d {
     grid-column: 8 / span 2;
     grid-row: 2;
+    align-self: start;
   }
 
   .image.e {
     grid-column: 6 / span 2;
     grid-row: 2;
-    align-self: center;
+    align-self: start;
   }
 
   .copy {
-    grid-column: 2 / span 3;
+    grid-column: 2 / span 4;
     grid-row: 2;
   }
 </style>

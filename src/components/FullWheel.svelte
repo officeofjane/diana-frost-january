@@ -2,7 +2,7 @@
   import { arc, pie } from "d3-shape";
   import { range } from "d3-array";
   import { scaleLinear } from "d3-scale";
-  import { data, NUM_NODES } from "$data/data.js";
+  import { data, NUM_NODES, SHORT_CATEGORY_NAMES } from "$data/data.js";
   import colours from "$data/colours.json";
 
   let { width, height, highlight = "" } = $props();
@@ -30,10 +30,10 @@
     return d;
   });
 
-  const highlightArc = $derived.by(() => {
+  const labelsArc = $derived.by(() => {
     const d = arc()
-      .innerRadius(innerRadius)
-      .outerRadius(width/2)
+      .innerRadius(innerRadius - ARC_WIDTH)
+      .outerRadius(innerRadius)
       .padAngle(0.01)
     return d;
   });
@@ -43,7 +43,7 @@
     .value((d) => d.labels.length);
   const wheelData = wheelPie(data);
 
-  // console.log(wheelData);
+  console.log(wheelData);
 </script>
 
 <svg viewBox="0, 0, {width}, {height}">
@@ -51,22 +51,28 @@
     class="pie"
     transform="translate({width/2}, {height/2})"
   >
-    {#each wheelData as slice}
+    {#each wheelData as slice, i}
     {@const centroid = slice.startAngle + (slice.endAngle - slice.startAngle)/2}
     {@const category = slice.data.category}
       <path class="arc {category}"
         d={wheelArc(slice)} 
         fill={colours[category]}
       />
-      <text class="category {category}"
-        x="-14"
-        dy="-0.5em"
+      <path class="labels-arc {category}" id="path-{category}"
+        d={labelsArc(slice)} 
+        fill="none"
+      />
+      <text class="category-label {category}"
+        x="4"
+        dy="18"
+        opacity="1"
         fill={colours[category]}
-        opacity={category === highlight ? 1 : 0}
-        text-anchor="end"
-        transform="rotate({toDegrees(centroid) + labelStartAngle}) translate({innerRadius}, 0)" 
       >
-        {slice.data.name}
+        <textPath href="#path-{category}"
+          text-anchor="start"
+        >
+          {SHORT_CATEGORY_NAMES[i]}
+        </textPath>
       </text>
     {/each}
   </g>
@@ -129,6 +135,11 @@
     &.label {
       fill: var(--label-colour);
     }
+  }
+
+  .category-label {
+    font-weight: 700;
+    letter-spacing: 0.5px;
   }
 
 </style>

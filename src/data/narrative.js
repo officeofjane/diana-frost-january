@@ -2,10 +2,6 @@ import colours from "$data/colours.json";
 import { symbolPlus } from "d3-shape";
 
 const narrative = [
-  { step: 0, 
-    highlight: "all", 
-    rotation: 0
-  },
   { step: 1, 
     highlight: "studio", 
     rotation: 8.5

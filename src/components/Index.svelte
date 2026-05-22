@@ -5,6 +5,7 @@
   import SnowParticles from "$components/SnowParticles.svelte";
   import Header from '$components/Header.svelte';
   import SmallWheel from '$components/SmallWheel.svelte';
+  import FullWheel from '$components/FullWheel.svelte';
   import Wheel from '$components/Wheel.svelte';
   import ScrollyWrapper from '$components/ScrollyWrapper.svelte';
   import Snowflake from '$components/Snowflake.svelte';
@@ -35,10 +36,22 @@
         <p>{@html p.text}</p>
       {/each}
       <div class="small-wheel-wrapper">
-        <SmallWheel width=400 height=400 />
+        <!-- <SmallWheel width=400 height=400 /> -->
+         <FullWheel width=800 height=800 highlight="all"/>
       </div>
       <p>{@html copy.transition}</p>
       <Snowflake />
+    </section>
+
+    <section class="transition body-copy copy">
+      <div class="scrolly-intro">
+        <div class="video-wrapper">
+          <video src="./videos/00_frozen-trailer-trim.mp4" autoplay loop muted>
+            <track kind="captions" />
+          </video> 
+        </div>
+        <p>{@html copy.scrollyintro}</p>
+      </div>
     </section>
 
     <section class="flywheel">
@@ -98,7 +111,7 @@
   .body-copy {
     max-width: var(--copy-width);
     margin: 0 auto;
-    padding: 0 px;
+    padding: 0px;
     margin-bottom: 3rem;
     font-size: 1.125rem;
   }
@@ -129,13 +142,26 @@
   .small-wheel-wrapper {
     display: flex;
     justify-content: center;
-
     animation: rotateInfinite 80s linear infinite;
   }
+  
 
   img {
     object-fit: cover;
     border-radius: 8px;
+  }
+
+  section.transition {
+    padding-bottom: 3rem;
+  }
+
+  .video-wrapper {
+    padding-bottom: 1rem;
+
+    video {
+      border-radius: 8px;
+      filter: drop-shadow(4px 8px 6px hsl(216deg 60% 28% / 0.5));
+    }
   }
 
   .outro {

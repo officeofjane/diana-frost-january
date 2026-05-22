@@ -5,7 +5,6 @@
   import Scrolly from '$components/helpers/Scrolly.svelte';
   import Wheel from '$components/Wheel.svelte';
   
-  import Step0 from '$components/layout/Step0.svelte';
   import Step1 from '$components/layout/Step1.svelte';
   import Step2 from '$components/layout/Step2.svelte';
   import Step3 from '$components/layout/Step3.svelte';
@@ -26,17 +25,15 @@
   let wheelWrapperWidth = $state(0);
   let wheelWrapperHeight = $state(0);
 
-  const layoutSteps = [Step0, Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10, Step11, Step12];
+  const layoutSteps = [Step1, Step2, Step3, Step4, Step5, Step6, Step7, Step8, Step9, Step10, Step11, Step12];
 
   function slice(index) {
     if (index) {
-      const obj = narrative.find(d => d.step === index);
+      const obj = narrative.find(d => d.step === index + 1);
       return obj;
     } 
     return narrative[0];
   }
-
-  
 </script>
 
 <div class="container">
